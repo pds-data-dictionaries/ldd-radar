@@ -1,0 +1,226 @@
+PDS4 Local Data Dictionary Processing Report
+
+Configuration:
+   LDDTool Version        10.0.0
+   LDD Version Id:        1.0.0.0
+   LDD Label Version Id:  1.22
+   LDD Discipline (T/F):  true
+   LDD Namespace URL:     http://pds.nasa.gov/pds4/
+   LDD URN Prefix:        urn:nasa:pds:
+   Time                   Wed Oct 20 19:31:54 UTC 2021
+   Common Schema          [PDS4_PDS_1G00.xsd]
+   Common Schematron      [PDS4_PDS_1G00.sch]
+   IM Version Id:         1.16.0.0
+   IM Namespace Id:       pds
+   IM Label Version Id:   1.22
+   IM Object Model        [UpperModel.pont]
+   IM Data Dictionary     [dd11179.pins]
+   IM Configuration File  [MDPTNConfigClassDisp.xml]
+   IM Glossary            [Glossary.pins]
+   IM Document Spec       [DMDocument.pins]
+
+Parameters:
+   Input File             [/home/runner/work/ldd-radar/ldd-radar/src/PDS4_RADAR_IngestLDD.xml]
+   PDS Processing         true
+   LDD Processing         true
+   Discipline LDD         true
+   Mission LDD            false
+   Write Attr Elements    false
+   Merge with Master      false
+
+Summary:
+   Classes                6
+   Attributes             9
+   Associations           14
+   Error messages         0
+   Warning messages       0
+   Information messages   0
+
+Detailed validation messages
+
+Parsed Input - Header:
+   LDD Name               Radar
+   LDD Version            1.0.0.0
+   Full Name              Jesse Stone
+   Steward                sbn
+   Namespace Id           radar
+   Comment                PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that support radar observations.
+   Last Modification Time 2021-09-27T21:30:00.000Z
+   PDS4 Merge Flag        false
+
+Parsed Input - Attributes:
+
+   name                   range_resolution
+   version                1.16
+   value data type        ASCII_Real
+   description            range resolution of images
+   minimum value          0
+   unit of measure type   Units_of_Time
+
+   name                   roundtrip_lighttime
+   version                1.16
+   value data type        ASCII_Real
+   description            round trip lighttime to target at time of observation
+   minimum value          0
+   unit of measure type   Units_of_Time
+
+   name                   matched_snr
+   version                1.16
+   value data type        ASCII_Real
+   description            total matched-filter signal-to-noise ratio in one run
+   minimum value          0
+
+   name                   range_depth
+   version                1.16
+   value data type        ASCII_Integer
+   description            number of pixels in an image with measurable signal
+   minimum value          0
+
+   name                   tx_power
+   version                1.16
+   value data type        ASCII_Real
+   description            transmitter power input to antenna
+   minimum value          0
+
+   name                   pixel_number
+   version                1.16
+   value data type        ASCII_Integer
+   description            number of pixels in an image with measurable signal
+   minimum value          0
+
+   name                   observation_purpose
+   version                1.16
+   value data type        UTF8_Short_String_Collapsed
+   description            Type of radar experiment being performed. Simpler experiments can have higher signal-to-noise or simpler hardware configurations, while more complicated experiments provide more information. ‘Range’ and ‘Total Power’ are mostly historical.
+
+   name                   power_modulation
+   version                1.16
+   value data type        UTF8_Short_String_Collapsed
+   description            On/off modulation (pulsing) of the transmitted power with time to provide range resolution, allow reception of echo in gaps, or cooling of the transmitter. Power modulation other than pulsing should be included in waveform modulation.
+
+   name                   waveform_modulation
+   version                1.16
+   value data type        UTF8_Short_String_Collapsed
+   description            Additional modulation of the amplitude, phase or frequency of the transmitted signal, usually to provide range resolution. Referred to as “pulse compression” in some literature.
+
+Parsed Input - Classes:
+
+   name                   Radar
+   description            This class is the top level class that contains other radar classes, separated by sub-discipline.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      Groundbased_Radar
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+   name                   Groundbased_Radar
+   description            This class contains attributes that describe metadata pertinent to radar observations / data from Arecibo, Goldstone, and similar installations.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      observation_purpose
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      Transmitter_Properties
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      Modulation
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      Quality
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      Target_Properties
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+   name                   Transmitter_Properties
+   description            Transmitter properties
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      range_resolution
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      tx_power
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Modulation
+   description            Modulation
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      power_modulation
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      waveform_modulation
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Quality
+   description            Quality
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      matched_snr
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      pixel_number
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Target_Properties
+   description            Target Properties
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      roundtrip_lighttime
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      range_depth
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+End of Report
