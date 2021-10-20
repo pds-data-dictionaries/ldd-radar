@@ -7,7 +7,7 @@
     <logical_identifier>urn:nasa:pds:ldd_radar_tests:data:valid1</logical_identifier>
     <version_id>1.0</version_id>
     <title>Phaethon CW 2018 Dec 15</title>
-    <information_model_version>1.15.0.0</information_model_version>
+    <information_model_version>1.16.0.0</information_model_version>
     <product_class>Product_Observational</product_class>
     <Citation_Information>
       <editor_list>M. C. Nolan, Ed.</editor_list>
@@ -40,7 +40,7 @@
       <name>Monostatic Arecibo Radar</name>
       <Observing_System_Component>
         <name>Arecibo Observatory</name>
-        <type>Observatory</type>
+        <type>Host</type>
         <Internal_Reference>
           <lid_reference>urn:nasa:pds:context:facility:observatory.arecibo</lid_reference>
           <reference_type>is_facility</reference_type>
@@ -84,14 +84,14 @@
         <radar:Groundbased_Radar>
           <radar:observation_purpose>Doppler</radar:observation_purpose>
           <radar:Transmitter_Properties>
-            <radar:Modulation>
-              <radar:power_modulation>CW</radar:power_modulation>
-              <radar:waveform_modulation>Uncoded</radar:waveform_modulation>
-            </radar:Modulation>
             <radar:tx_power>369.0</radar:tx_power>
           </radar:Transmitter_Properties>
+          <radar:Modulation>
+            <radar:power_modulation>CW</radar:power_modulation>
+            <radar:waveform_modulation>Uncoded</radar:waveform_modulation>
+          </radar:Modulation>
           <radar:Target_Properties>
-            <radar:roundtrip-lighttime unit="s">71.04</radar:roundtrip-lighttime>
+            <radar:roundtrip_lighttime unit="s">71.04</radar:roundtrip_lighttime>
           </radar:Target_Properties>
         </radar:Groundbased_Radar>
       </radar:Radar>
