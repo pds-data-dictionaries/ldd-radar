@@ -23,12 +23,17 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>range resolution of images</definition>
+<!-- Range resolution is a property of the instrument, not the output product.  It should not be limited to images.   -->
+<!--     I recommend a definition more like "The minimum separation distance that can be resolved between two  -->
+<!--     closely spaced targets by a radar"                                                                    -->
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
             <minimum_value>0</minimum_value>
             <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+<!-- Range resolution is measured in Units of Length -->
             <specified_unit_id>s</specified_unit_id>
+<!-- Specified unit id should be "m" -->
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -39,6 +44,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>round trip lighttime to target at time of observation</definition>
+<!-- How should this be interpretted by bistatic radar (such as Goldstone to VLA, or Arecibo to Green Bank? -->
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -59,6 +65,7 @@
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
             <minimum_value>0</minimum_value>
+<!-- Is there a Unit of Measure and a specified unit id? -->
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -69,10 +76,13 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>number of pixels in an image with measurable signal</definition>
+<!-- This should not be limited to images -->
+<!-- Range depth is the distance between the first detectable echo and the last -->
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
             <minimum_value>0</minimum_value>
+<!-- Is there a Unit of Measure and a specified unit id?  I recommend "Units of Distance" and "m", respectively -->
         </DD_Value_Domain>
     </DD_Attribute>    
 
@@ -91,6 +101,7 @@
             <unit_of_measure_type>Units_of_Power</unit_of_measure_type>
             <specified_unit_id>kilowatts</specified_unit_id>
             -->
+<!-- the latter should be "watt" so that the attribute can be used for spacecraft radars -->
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -101,6 +112,8 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>number of pixels in an image with measurable signal</definition>
+<!-- The definition may be OK; but I don't like the name, which suggests an index  -->
+<!-- If this is not nillable, what happens when the product is not an image? -->
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -110,6 +123,7 @@
 
     <DD_Attribute>
         <name>observation_purpose</name>
+<!-- The permissible values distinguish radar "modes", not purposes of observation -->
         <version_id>1.0</version_id>
         <local_identifier>observation_purpose</local_identifier>
         <nillable_flag>false</nillable_flag>
@@ -125,20 +139,24 @@
             <DD_Permissible_Value>
                 <value>Doppler</value>
                 <value_meaning>Received signal is analyzed as a function of Doppler shift with separation by range.</value_meaning>
+<!-- I don't understand the definition -->
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Range</value>
                 <value_meaning>Transmitted signal is modulated in order to resolve and/or local the target in range, but the entire received signal is analyzed without separation by Doppler shift.</value_meaning>
+<!-- Could be rewritten for clarity -->
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Total Power</value>
                 <value_meaning>Only the total echo power is measured, with no separation in range or Doppler shift.</value_meaning>
+<!-- Are there such observations?  -->
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
 
     <DD_Attribute>
         <name>power_modulation</name>
+<!--  I don't see the need for this attribute; the useful information is in waveform modulation, below -->
         <version_id>1.0</version_id>
         <local_identifier>power_modulation</local_identifier>
         <nillable_flag>false</nillable_flag>
@@ -160,6 +178,7 @@
 
     <DD_Attribute>
         <name>waveform_modulation</name>
+<!-- This is really being used in the sense that the transmitted 'pulse' is being modulated -->
         <version_id>1.0</version_id>
         <local_identifier>waveform_modulation</local_identifier>
         <nillable_flag>false</nillable_flag>
@@ -171,6 +190,8 @@
             <DD_Permissible_Value>
                 <value>Uncoded</value>
                 <value_meaning>No additional modulation beyond a pulse (if present) is applied to the signal in order to encode range information.</value_meaning>
+<!-- Modulation does not "encode range information"; it enables extraction of range information from the echo. -->
+<!-- But some types of modulation may not enable any range processing; for example, a highway radar gun only provides line-of-sight velocity. -->
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Barker BPSK</value>
