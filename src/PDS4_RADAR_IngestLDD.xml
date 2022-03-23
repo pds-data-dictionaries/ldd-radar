@@ -79,11 +79,7 @@
         <local_identifier>range_depth</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>number of pixels in an image with measurable signal</definition>
-<!-- This should not be limited to images -->
-<!-- JS: Remove "images" and replace with "product" -->
-<!-- JS: Definition above is a copy/paste error, pull new definition from google doc and reconcile with Simpson's comments below -->
-<!-- Range depth is the distance between the first detectable echo and the last -->
+        <definition>Range depth in units of range_resolution. This is an indicator of observation usefulness for analysis</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
