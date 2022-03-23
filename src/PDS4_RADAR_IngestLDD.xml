@@ -6,7 +6,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:radar="http://pds.nasa.gov/pds4/radar/v1" 
 	xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.xsd">
-
 	<name>Radar</name>
     <ldd_version_id>1.0.0.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
@@ -15,30 +14,39 @@
 	<namespace_id>radar</namespace_id>
 	<comment>PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that support radar observations.</comment>
 	<last_modification_date_time>2021-09-27T21:30:00.000Z</last_modification_date_time>
-
     <DD_Attribute>
-        <name>range_resolution</name>
+        <name>range_resolution_distance</name>
         <version_id>1.0</version_id>
-        <local_identifier>range_resolution</local_identifier>
+        <local_identifier>range_resolution_distance</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>range resolution of images</definition>
-<!-- Range resolution is a property of the instrument, not the output product.  It should not be limited to images.   -->
-<!-- JS: update definition to not specify images -->
-<!--     I recommend a definition more like "The minimum separation distance that can be resolved between two  -->
-<!--     closely spaced targets by a radar"                                                                    -->
-<!-- JS: we can put in both versions for time and distance -->
+        <definition>Range resolution of products, expressed in units of distance. The minimum separation distance that can be resolved between two closely spaced targets by a radar.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>m</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>range_resolution_time</name>
+        <version_id>1.0</version_id>
+        <local_identifier>range_resolution_time</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Range resolution of products, expressed in units of time.  The minimum separation distance that can be resolved between two closely spaced targets by a radar.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
             <minimum_value>0</minimum_value>
             <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
-<!-- Range resolution is measured in Units of Length -->
             <specified_unit_id>s</specified_unit_id>
-<!-- Specified unit id should be "m" -->
         </DD_Value_Domain>
     </DD_Attribute>
 
+    
     <DD_Attribute>
         <name>roundtrip_lighttime</name>
         <version_id>1.0</version_id>
@@ -74,9 +82,9 @@
     </DD_Attribute>
 
     <DD_Attribute>
-        <name>range_depth</name>
+        <name>range_depth_distance</name>
         <version_id>1.0</version_id>
-        <local_identifier>range_depth</local_identifier>
+        <local_identifier>range_depth_distance</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>Range depth in units of range_resolution. This is an indicator of observation usefulness for analysis</definition>
@@ -84,8 +92,24 @@
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
             <minimum_value>0</minimum_value>
-<!-- Is there a Unit of Measure and a specified unit id?  I recommend "Units of Distance" and "m", respectively -->
-<!-- JS: This is matched with range_resolution, so we'll need two versions of this, as well. -->
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>m</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>    
+
+    <DD_Attribute>
+        <name>range_depth_time</name>
+        <version_id>1.0</version_id>
+        <local_identifier>range_depth_time</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Range depth in units of range_resolution. This is an indicator of observation usefulness for analysis</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <specified_unit_id>s</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>    
 
@@ -299,7 +323,13 @@
         <definition>Transmitter properties</definition>
         <element_flag>false</element_flag>
         <DD_Association>
-            <identifier_reference>range_resolution</identifier_reference>
+            <identifier_reference>range_resolution_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>range_resolution_distance</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -368,11 +398,23 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>range_depth</identifier_reference>
+            <identifier_reference>range_depth_time</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-    </DD_Class>    
+        <DD_Association>
+            <identifier_reference>range_depth_distance</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <!-- Rules needed -->
+    <!-- range_depth_time and range_resolution_time must occur together -->
+    <!-- range_depth_distance and range_resolution_distance must occur together -->
+    <!-- range_depth_time and range_resolution_time must have the same unit -->
+    <!-- range_depth_distance and range_resolution_distance have the same unit -->
 
 </Ingest_LDD>
