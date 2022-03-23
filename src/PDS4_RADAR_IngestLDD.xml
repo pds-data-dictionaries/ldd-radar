@@ -411,10 +411,36 @@
         </DD_Association>
     </DD_Class>
 
-    <!-- Rules needed -->
-    <!-- range_depth_time and range_resolution_time must occur together -->
-    <!-- range_depth_distance and range_resolution_distance must occur together -->
-    <!-- range_depth_time and range_resolution_time must have the same unit -->
-    <!-- range_depth_distance and range_resolution_distance have the same unit -->
+    <DD_Rule>
+        <local_identifier>range_resolution_and_depth_time</local_identifier>
+        <rule_context>//radar:range_depth_time</rule_context>
+        <rule_assign>name="range_depth_unit" value="@unit"</rule_assign>
+        <DD_Rule_Statement>
+            <rule_type>Assert</rule_type>
+            <rule_test>//radar:range_resolution_time</rule_test>
+            <rule_message>If range_depth_time is specified specified, range_resolution_time must also be specified.</rule_message>
+        </DD_Rule_Statement>
+        <DD_Rule_Statement>
+            <rule_type>Assert</rule_type>
+            <rule_test>//radar:range_resolution_time[@unit]==$range_depth_unit</rule_test>
+            <rule_message>Unit for range_depth_time unit must match unit for range_resolution_time.</rule_message>
+        </DD_Rule_Statement>
+    </DD_Rule>
+
+    <DD_Rule>
+        <local_identifier>range_resolution_and_depth_distance</local_identifier>
+        <rule_context>//radar:range_depth_distance</rule_context>
+        <rule_assign>name="range_depth_unit" value="@unit"</rule_assign>
+        <DD_Rule_Statement>
+            <rule_type>Assert</rule_type>
+            <rule_test>//radar:range_resolution_distance</rule_test>
+            <rule_message>If range_depth_distance is specified specified, range_resolution_distance must also be specified.</rule_message>
+        </DD_Rule_Statement>
+        <DD_Rule_Statement>
+            <rule_type>Assert</rule_type>
+            <rule_test>//radar:range_resolution_distance[@unit]==$range_depth_unit</rule_test>
+            <rule_message>Unit for range_depth_distance unit must match unit for range_resolution_distance.</rule_message>
+        </DD_Rule_Statement>
+    </DD_Rule>
 
 </Ingest_LDD>
