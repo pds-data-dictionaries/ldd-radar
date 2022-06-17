@@ -24,13 +24,13 @@ PDS Validate Tool Report
 
 Configuration:
    Version                       2.2.3
-   Date                          2022-06-17T22:14:49Z
+   Date                          2022-06-17T22:21:07Z
 
 Parameters:
-   Targets                       [file:/home/runner/work/ldd-radar/ldd-radar/build/development/653cdf9ee97c632dd2fff077d40c517015f4da1b/1.18.0.0/PDS4_RADAR_1I00_1000.xml, file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_no_trigger_VALID.xml, file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_pass_VALID.xml, file:/home/runner/work/ldd-radar/ldd-radar/test/test1_VALID.xml]
+   Targets                       [file:/home/runner/work/ldd-radar/ldd-radar/build/development/a27ecae209963852af9affae3f859d342fa3711e/1.18.0.0/PDS4_RADAR_1I00_1000.xml, file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_no_trigger_VALID.xml, file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_pass_VALID.xml, file:/home/runner/work/ldd-radar/ldd-radar/test/test1_VALID.xml]
    Rule Type                     pds4.label
-   User Specified Schemas        [file:/home/runner/work/ldd-radar/ldd-radar/build/development/653cdf9ee97c632dd2fff077d40c517015f4da1b/1.18.0.0/PDS4_RADAR_1I00_1000.xsd, file:/tmp/PDS4_PDS_1I00.xsd]
-   User Specified Schematrons    [file:/home/runner/work/ldd-radar/ldd-radar/build/development/653cdf9ee97c632dd2fff077d40c517015f4da1b/1.18.0.0/PDS4_RADAR_1I00_1000.sch, file:/tmp/PDS4_PDS_1I00.sch]
+   User Specified Schemas        [file:/home/runner/work/ldd-radar/ldd-radar/build/development/a27ecae209963852af9affae3f859d342fa3711e/1.18.0.0/PDS4_RADAR_1I00_1000.xsd, file:/tmp/PDS4_PDS_1I00.xsd]
+   User Specified Schematrons    [file:/home/runner/work/ldd-radar/ldd-radar/build/development/a27ecae209963852af9affae3f859d342fa3711e/1.18.0.0/PDS4_RADAR_1I00_1000.sch, file:/tmp/PDS4_PDS_1I00.sch]
    Severity Level                WARNING
    Recurse Directories           true
    File Filters Used             [*.xml, *.XML]
@@ -43,7 +43,7 @@ Parameters:
 
 Product Level Validation Results
 
-  FAIL: file:/home/runner/work/ldd-radar/ldd-radar/build/development/653cdf9ee97c632dd2fff077d40c517015f4da1b/1.18.0.0/PDS4_RADAR_1I00_1000.xml
+  FAIL: file:/home/runner/work/ldd-radar/ldd-radar/build/development/a27ecae209963852af9affae3f859d342fa3711e/1.18.0.0/PDS4_RADAR_1I00_1000.xml
       ERROR  [error.validation.internal_error]   Error executing validationTask: java.lang.NullPointerException
         1 product validation(s) completed
 java.lang.reflect.InvocationTargetException
@@ -86,7 +86,6 @@ Caused by: java.lang.NullPointerException
 	... 12 more
 
   FAIL: file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_pass_VALID.xml
-      ERROR  [error.label.schema]   line 88, 49: cvc-complex-type.2.4.a: Invalid content was found starting with element '{"http://pds.nasa.gov/pds4/radar/v1":roundtrip_lighttime}'. One of '{"http://pds.nasa.gov/pds4/radar/v1":transmitter_to_receiver_lighttime, "http://pds.nasa.gov/pds4/radar/v1":range_depth_time, "http://pds.nasa.gov/pds4/radar/v1":range_depth_distance}' is expected.
       ERROR  [error.validation.internal_error]   Error executing validationTask: java.lang.NullPointerException
         3 product validation(s) completed
 java.lang.reflect.InvocationTargetException
@@ -113,7 +112,7 @@ Caused by: java.lang.NullPointerException
 
 Summary:
 
-  5 error(s)
+  4 error(s)
   0 warning(s)
 
   Product Validation Summary:
@@ -128,8 +127,7 @@ Summary:
 
   Message Types:
     4            error.validation.internal_error
-    1            error.label.schema
 
 End of Report
-Completed execution in 6910 ms
+Completed execution in 7769 ms
 
