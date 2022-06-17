@@ -144,14 +144,12 @@
     </DD_Attribute>
     
     <DD_Attribute>
-        <name>pixel_number</name>
+        <name>pixel_count</name>
         <version_id>1.0</version_id>
         <local_identifier>pixel_number</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>number of pixels in an image with measurable signal</definition>
-<!-- The definition may be OK; but I don't like the name, which suggests an index  -->
-<!-- JS: would pixel_count be better? -->
 <!-- If this is not nillable, what happens when the product is not an image? -->
 <!-- JS: this is not required, so does not have to be nillable -->
         <DD_Value_Domain>
