@@ -48,14 +48,12 @@
 
     
     <DD_Attribute>
-        <name>roundtrip_lighttime</name>
+        <name>transmitter_to_receiver_lighttime</name>
         <version_id>1.0</version_id>
-        <local_identifier>roundtrip_lighttime</local_identifier>
+        <local_identifier>transmitter_to_receiver_lighttime</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>round trip lighttime to target at time of observation</definition>
-<!-- How should this be interpretted by bistatic radar (such as Goldstone to VLA, or Arecibo to Green Bank? -->
-<!-- JS: Update the name and definition to refer to time from the transmitter to the receiver. This would require a better term than roundtrip. Perhaps total_lighttime? -->
+        <definition>Distance from the transmitter, to the target, and back to the reciever at the time of observation, expressed as lighttime.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -392,7 +390,7 @@
         <definition>Target Properties</definition>
         <element_flag>false</element_flag>
         <DD_Association>
-            <identifier_reference>roundtrip_lighttime</identifier_reference>
+            <identifier_reference>transmitter_to_receiver_lighttime</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>

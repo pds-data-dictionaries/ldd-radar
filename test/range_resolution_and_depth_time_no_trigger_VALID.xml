@@ -88,7 +88,7 @@
             <radar:waveform_modulation>Uncoded</radar:waveform_modulation>
           </radar:Modulation>
           <radar:Target_Properties>
-            <radar:roundtrip_lighttime unit="s">71.04</radar:roundtrip_lighttime>
+            <radar:transmitter_to_receiver_lighttime unit="s">71.04</radar:transmitter_to_receiver_lighttime>
           </radar:Target_Properties>
         </radar:Groundbased_Radar>
       </radar:Radar>
