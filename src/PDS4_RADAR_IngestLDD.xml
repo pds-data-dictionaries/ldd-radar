@@ -64,18 +64,30 @@
     </DD_Attribute>
 
     <DD_Attribute>
-        <name>matched_snr</name>
+        <name>matched_snr_ratio</name>
         <version_id>1.0</version_id>
-        <local_identifier>matched_snr</local_identifier>
+        <local_identifier>matched_snr_ratio</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>total matched-filter signal-to-noise ratio in one run</definition>
+        <definition>total matched-filter signal-to-noise ratio in one run, expressed as an actual ratio</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
             <minimum_value>0</minimum_value>
-<!-- Is there a Unit of Measure and a specified unit id? -->
-<!-- JS: is this an actual ratio, or a difference in db? -->
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>matched_snr_db</name>
+        <version_id>1.0</version_id>
+        <local_identifier>matched_snr_db</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>total matched-filter signal-to-noise ratio in one run, expressed in db</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -369,7 +381,13 @@
         <definition>Quality</definition>
         <element_flag>false</element_flag>
         <DD_Association>
-            <identifier_reference>matched_snr</identifier_reference>
+            <identifier_reference>matched_snr_ratio</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>matched_snr_db</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
