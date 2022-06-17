@@ -1,18 +1,18 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        10.0.0
+   LDDTool Version        14.0.11
    LDD Version Id:        1.0.0.0
-   LDD Label Version Id:  1.22
+   LDD Label Version Id:  1.24
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue Mar 22 17:23:32 UTC 2022
-   Common Schema          [PDS4_PDS_1G00.xsd]
-   Common Schematron      [PDS4_PDS_1G00.sch]
-   IM Version Id:         1.16.0.0
+   Time                   Fri Jun 17 22:25:46 UTC 2022
+   Common Schema          [PDS4_PDS_1I00.xsd]
+   Common Schematron      [PDS4_PDS_1I00.sch]
+   IM Version Id:         1.18.0.0
    IM Namespace Id:       pds
-   IM Label Version Id:   1.22
+   IM Label Version Id:   1.24
    IM Object Model        [UpperModel.pont]
    IM Data Dictionary     [dd11179.pins]
    IM Configuration File  [MDPTNConfigClassDisp.xml]
@@ -29,8 +29,8 @@ Parameters:
    Merge with Master      false
 
 Summary:
-   Classes                6
-   Attributes             9
+   Classes                5
+   Attributes             10
    Associations           14
    Error messages         0
    Warning messages       0
@@ -50,58 +50,70 @@ Parsed Input - Header:
 
 Parsed Input - Attributes:
 
-   name                   range_resolution
-   version                1.16
+   name                   range_resolution_distance
+   version                1.18
    value data type        ASCII_Real
-   description            range resolution of images
+   description            Range resolution of products, expressed in units of distance. The minimum separation distance that can be resolved between two closely spaced targets by a radar.
+   minimum value          0
+   unit of measure type   Units_of_Length
+
+   name                   range_resolution_time
+   version                1.18
+   value data type        ASCII_Real
+   description            Range resolution of products, expressed in units of time. The minimum separation distance that can be resolved between two closely spaced targets by a radar.
    minimum value          0
    unit of measure type   Units_of_Time
 
-   name                   roundtrip_lighttime
-   version                1.16
+   name                   transmitter_to_receiver_lighttime
+   version                1.18
    value data type        ASCII_Real
-   description            round trip lighttime to target at time of observation
+   description            Distance from the transmitter, to the target, and back to the reciever at the time of observation, expressed as lighttime.
    minimum value          0
    unit of measure type   Units_of_Time
 
-   name                   matched_snr
-   version                1.16
+   name                   matched_snr_ratio
+   version                1.18
    value data type        ASCII_Real
-   description            total matched-filter signal-to-noise ratio in one run
+   description            total matched-filter signal-to-noise ratio in one run, expressed as an actual ratio
    minimum value          0
 
-   name                   range_depth
-   version                1.16
+   name                   matched_snr_db
+   version                1.18
+   value data type        ASCII_Real
+   description            total matched-filter signal-to-noise ratio in one run, expressed in db
+   minimum value          0
+
+   name                   range_depth_distance
+   version                1.18
    value data type        ASCII_Integer
-   description            number of pixels in an image with measurable signal
+   description            Range depth in units of range_resolution. This is an indicator of observation usefulness for analysis
    minimum value          0
+   unit of measure type   Units_of_Length
+
+   name                   range_depth_time
+   version                1.18
+   value data type        ASCII_Integer
+   description            Range depth in units of range_resolution. This is an indicator of observation usefulness for analysis
+   minimum value          0
+   unit of measure type   Units_of_Time
 
    name                   tx_power
-   version                1.16
+   version                1.18
    value data type        ASCII_Real
    description            transmitter power input to antenna
    minimum value          0
+   unit of measure type   Units_of_Power
 
-   name                   pixel_number
-   version                1.16
+   name                   pixel_count
+   version                1.18
    value data type        ASCII_Integer
    description            number of pixels in an image with measurable signal
    minimum value          0
 
    name                   observation_purpose
-   version                1.16
+   version                1.18
    value data type        UTF8_Short_String_Collapsed
    description            Type of radar experiment being performed. Simpler experiments can have higher signal-to-noise or simpler hardware configurations, while more complicated experiments provide more information. ‘Range’ and ‘Total Power’ are mostly historical.
-
-   name                   power_modulation
-   version                1.16
-   value data type        UTF8_Short_String_Collapsed
-   description            On/off modulation (pulsing) of the transmitted power with time to provide range resolution, allow reception of echo in gaps, or cooling of the transmitter. Power modulation other than pulsing should be included in waveform modulation.
-
-   name                   waveform_modulation
-   version                1.16
-   value data type        UTF8_Short_String_Collapsed
-   description            Additional modulation of the amplitude, phase or frequency of the transmitted signal, usually to provide range resolution. Referred to as “pulse compression” in some literature.
 
 Parsed Input - Classes:
 
@@ -136,11 +148,6 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        component_of
 
-      local identifier      Modulation
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        component_of
-
       local identifier      Quality
       minimum occurrences   0
       maximum occurrences   1
@@ -159,31 +166,18 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      range_resolution
+      local identifier      range_resolution_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      range_resolution_distance
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
       local identifier      tx_power
       minimum occurrences   1
-      maximum occurrences   1
-      reference type        attribute_of
-
-   name                   Modulation
-   description            Modulation
-   is abstract            false
-   is choice              false
-   subclass of            USER
-
-   Associations
-
-      local identifier      power_modulation
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      waveform_modulation
-      minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
@@ -195,7 +189,12 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      matched_snr
+      local identifier      matched_snr_ratio
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      matched_snr_db
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -213,12 +212,17 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      roundtrip_lighttime
+      local identifier      transmitter_to_receiver_lighttime
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      range_depth
+      local identifier      range_depth_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      range_depth_distance
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of

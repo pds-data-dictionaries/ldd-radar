@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:radar  Version:1.0.0.0 - Tue Mar 22 17:23:32 UTC 2022 -->
-  <!-- Generated from the PDS4 Information Model Version 1.16.0.0 - System Build 11.1 -->
+  <!-- PDS4 XML/Schema for Name Space Id:radar  Version:1.0.0.0 - Fri Jun 17 22:25:46 UTC 2022 -->
+  <!-- Generated from the PDS4 Information Model Version 1.18.0.0 - System Build 12.1 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
-  <!-- 1.16.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.18.0.0 - pds: - Common Dictionary                                       -->
   <!-- 1.0.0.0 - radar: - Radar                                                  -->
-  <!--   file:/home/runner/work/ldd-radar/ldd-radar/src/PDS4_RADAR_IngestLDD.xml -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://pds.nasa.gov/pds4/radar/v1"
@@ -16,7 +15,7 @@
     attributeFormDefault="unqualified"
     version="1.0.0.0">
  
-    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd"/>
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1I00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
@@ -35,7 +34,6 @@ PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that sup
     <xs:sequence>
       <xs:element name="observation_purpose" type="radar:observation_purpose" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="Transmitter_Properties" type="radar:Transmitter_Properties" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="Modulation" type="radar:Modulation" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Quality" type="radar:Quality" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Target_Properties" type="radar:Target_Properties" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
@@ -44,27 +42,14 @@ PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that sup
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
-  <xs:complexType name="Modulation">
-    <xs:annotation>
-<xs:documentation>Modulation</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="power_modulation" type="radar:power_modulation" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="waveform_modulation" type="radar:waveform_modulation" minOccurs="0" maxOccurs="1"> </xs:element>
-    </xs:sequence>
-    <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test="radar:power_modulation = ('CW', 'Pulsed')"/> -->
-    <!-- <xs:assert test="radar:waveform_modulation = ('Barker BPSK', 'Linear Chirp', 'Non-repeating BPSK', 'Other', 'Other BPSK', 'Other Chirp', 'Repeating LFSR BPSK', 'Uncoded')"/> -->
-    <!-- End assert statements for schematron - Enumerated Values -->
-  </xs:complexType>
-
   <xs:complexType name="Quality">
     <xs:annotation>
 <xs:documentation>Quality</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="matched_snr" type="radar:matched_snr" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="pixel_number" type="radar:pixel_number" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="matched_snr_ratio" type="radar:matched_snr_ratio" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="matched_snr_db" type="radar:matched_snr_db" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="pixel_count" type="radar:pixel_count" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -84,8 +69,9 @@ PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that sup
 <xs:documentation>Target Properties</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="roundtrip_lighttime" type="radar:roundtrip_lighttime" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="range_depth" type="radar:range_depth" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="transmitter_to_receiver_lighttime" type="radar:transmitter_to_receiver_lighttime" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="range_depth_time" type="radar:range_depth_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="range_depth_distance" type="radar:range_depth_distance" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -94,7 +80,8 @@ PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that sup
 <xs:documentation>Transmitter properties</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="range_resolution" type="radar:range_resolution" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="range_resolution_time" type="radar:range_resolution_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="range_resolution_distance" type="radar:range_resolution_distance" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="tx_power" type="radar:tx_power" minOccurs="1" maxOccurs="1"> </xs:element>
     </xs:sequence>
   </xs:complexType>
@@ -107,10 +94,21 @@ PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that sup
       </xs:documentation>
     </xs:annotation>
 
-  <xs:simpleType name="matched_snr">
+  <xs:simpleType name="matched_snr_db">
     <xs:annotation>
       <xs:documentation>total matched-filter signal-to-noise ratio in
-        one run</xs:documentation>
+        one run, expressed in db</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="matched_snr_ratio">
+    <xs:annotation>
+      <xs:documentation>total matched-filter signal-to-noise ratio in
+        one run, expressed as an actual ratio</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="0"/>
@@ -132,7 +130,7 @@ PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that sup
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="pixel_number">
+  <xs:simpleType name="pixel_count">
     <xs:annotation>
       <xs:documentation>number of pixels in an image with measurable
         signal</xs:documentation>
@@ -143,89 +141,123 @@ PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that sup
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="power_modulation">
-    <xs:annotation>
-      <xs:documentation>On/off modulation (pulsing) of the transmitted
-        power with time to provide range resolution, allow reception of
-        echo in gaps, or cooling of the transmitter. Power modulation
-        other than pulsing should be included in waveform
-        modulation.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:UTF8_Short_String_Collapsed">
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="range_depth">
-    <xs:annotation>
-      <xs:documentation>number of pixels in an image with measurable
-        signal</xs:documentation>
-    </xs:annotation>
+  <xs:simpleType name="range_depth_distance_WO_Units">
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="0"/>
      <xs:maxInclusive value="9223372036854775807"/>
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="range_resolution_WO_Units">
+  <xs:complexType name="range_depth_distance">
+    <xs:annotation>
+      <xs:documentation>Range depth in units of range_resolution. This
+        is an indicator of observation usefulness for
+        analysis</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="radar:range_depth_distance_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="range_depth_time_WO_Units">
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="range_depth_time">
+    <xs:annotation>
+      <xs:documentation>Range depth in units of range_resolution. This
+        is an indicator of observation usefulness for
+        analysis</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="radar:range_depth_time_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="range_resolution_distance_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="0"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:complexType name="range_resolution">
+  <xs:complexType name="range_resolution_distance">
     <xs:annotation>
-<xs:documentation>range resolution of images</xs:documentation>
+      <xs:documentation>Range resolution of products, expressed in units
+        of distance. The minimum separation distance that can be
+        resolved between two closely spaced targets by a
+        radar.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="radar:range_resolution_WO_Units">
-        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      <xs:extension base="radar:range_resolution_distance_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:simpleType name="roundtrip_lighttime_WO_Units">
+  <xs:simpleType name="range_resolution_time_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="0"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:complexType name="roundtrip_lighttime">
+  <xs:complexType name="range_resolution_time">
     <xs:annotation>
-      <xs:documentation>round trip lighttime to target at time of
-        observation</xs:documentation>
+      <xs:documentation>Range resolution of products, expressed in units
+        of time. The minimum separation distance that can be resolved
+        between two closely spaced targets by a radar.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="radar:roundtrip_lighttime_WO_Units">
+      <xs:extension base="radar:range_resolution_time_WO_Units">
         <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:simpleType name="tx_power">
+  <xs:simpleType name="transmitter_to_receiver_lighttime_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="transmitter_to_receiver_lighttime">
+    <xs:annotation>
+      <xs:documentation>Distance from the transmitter, to the target,
+        and back to the reciever at the time of observation, expressed
+        as lighttime.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="radar:transmitter_to_receiver_lighttime_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="tx_power_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="tx_power">
     <xs:annotation>
       <xs:documentation>transmitter power input to
         antenna</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="0"/>
-     <xs:maxInclusive value="1.7976931348623157e308"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="waveform_modulation">
-    <xs:annotation>
-      <xs:documentation>Additional modulation of the amplitude, phase or
-        frequency of the transmitted signal, usually to provide range
-        resolution. Referred to as “pulse compression” in some
-        literature.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:UTF8_Short_String_Collapsed">
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
+    <xs:simpleContent>
+      <xs:extension base="radar:tx_power_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Power" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 </xs:schema>

@@ -2,9 +2,9 @@
   {
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
-      "IM Version": "1.16.0.0" ,
+      "IM Version": "1.18.0.0" ,
       "LDD Version": "1.0.0.0" ,
-      "Date": "Tue Mar 22 17:23:32 UTC 2022" ,
+      "Date": "2022-06-17T15:25:46" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "namespaces": ["pds:", "radar:"] ,
       "classDictionary": [
@@ -53,22 +53,6 @@
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.radar.Groundbased_Radar.radar.Modulation" ,
-                "title": "Modulation" ,
-                "assocType": "component_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "0" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1030" ,
-                "classId": [
-                  "0001_NASA_PDS_1.radar.Modulation"
-                 ]
-              }
-            }
-           , {"association": {
                 "identifier": "0001_NASA_PDS_1.radar.Groundbased_Radar.radar.Quality" ,
                 "title": "Quality" ,
                 "assocType": "component_of" ,
@@ -78,7 +62,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1040" ,
+                "classOrder": "1030" ,
                 "classId": [
                   "0001_NASA_PDS_1.radar.Quality"
                  ]
@@ -94,56 +78,9 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1050" ,
+                "classOrder": "1040" ,
                 "classId": [
                   "0001_NASA_PDS_1.radar.Target_Properties"
-                 ]
-              }
-            }
-           ]
-          }
-        }
-      , {
-          "class": {
-            "identifier": "0001_NASA_PDS_1.radar.Modulation" ,
-            "title": "Modulation" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "radar" ,
-            "steward": "sbn" ,
-            "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
-            "isDeprecated": "false" ,
-            "description": "Modulation"
-              , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.radar.Modulation.radar.power_modulation" ,
-                "title": "power_modulation" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "0" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1010" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.radar.Modulation.radar.power_modulation"
-                 ]
-              }
-            }
-           , {"association": {
-                "identifier": "0001_NASA_PDS_1.radar.Modulation.radar.waveform_modulation" ,
-                "title": "waveform_modulation" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "0" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1020" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.radar.Modulation.radar.waveform_modulation"
                  ]
               }
             }
@@ -163,8 +100,8 @@
             "description": "Quality"
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.radar.Quality.radar.matched_snr" ,
-                "title": "matched_snr" ,
+                "identifier": "0001_NASA_PDS_1.radar.Quality.radar.matched_snr_ratio" ,
+                "title": "matched_snr_ratio" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
@@ -174,13 +111,13 @@
                 "maximumCardinality": "1" ,
                 "classOrder": "1010" ,
                 "attributeId": [
-                  "0001_NASA_PDS_1.radar.Quality.radar.matched_snr"
+                  "0001_NASA_PDS_1.radar.Quality.radar.matched_snr_ratio"
                  ]
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.radar.Quality.radar.pixel_number" ,
-                "title": "pixel_number" ,
+                "identifier": "0001_NASA_PDS_1.radar.Quality.radar.matched_snr_db" ,
+                "title": "matched_snr_db" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
@@ -190,7 +127,23 @@
                 "maximumCardinality": "1" ,
                 "classOrder": "1020" ,
                 "attributeId": [
-                  "0001_NASA_PDS_1.radar.Quality.radar.pixel_number"
+                  "0001_NASA_PDS_1.radar.Quality.radar.matched_snr_db"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.radar.Quality.radar.pixel_count" ,
+                "title": "pixel_count" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.radar.Quality.radar.pixel_count"
                  ]
               }
             }
@@ -241,8 +194,8 @@
             "description": "Target Properties"
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.radar.Target_Properties.radar.roundtrip_lighttime" ,
-                "title": "roundtrip_lighttime" ,
+                "identifier": "0001_NASA_PDS_1.radar.Target_Properties.radar.transmitter_to_receiver_lighttime" ,
+                "title": "transmitter_to_receiver_lighttime" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
@@ -252,13 +205,13 @@
                 "maximumCardinality": "1" ,
                 "classOrder": "1010" ,
                 "attributeId": [
-                  "0001_NASA_PDS_1.radar.Target_Properties.radar.roundtrip_lighttime"
+                  "0001_NASA_PDS_1.radar.Target_Properties.radar.transmitter_to_receiver_lighttime"
                  ]
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.radar.Target_Properties.radar.range_depth" ,
-                "title": "range_depth" ,
+                "identifier": "0001_NASA_PDS_1.radar.Target_Properties.radar.range_depth_time" ,
+                "title": "range_depth_time" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
@@ -268,7 +221,23 @@
                 "maximumCardinality": "1" ,
                 "classOrder": "1020" ,
                 "attributeId": [
-                  "0001_NASA_PDS_1.radar.Target_Properties.radar.range_depth"
+                  "0001_NASA_PDS_1.radar.Target_Properties.radar.range_depth_time"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.radar.Target_Properties.radar.range_depth_distance" ,
+                "title": "range_depth_distance" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.radar.Target_Properties.radar.range_depth_distance"
                  ]
               }
             }
@@ -288,8 +257,8 @@
             "description": "Transmitter properties"
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.range_resolution" ,
-                "title": "range_resolution" ,
+                "identifier": "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.range_resolution_time" ,
+                "title": "range_resolution_time" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
@@ -299,7 +268,23 @@
                 "maximumCardinality": "1" ,
                 "classOrder": "1010" ,
                 "attributeId": [
-                  "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.range_resolution"
+                  "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.range_resolution_time"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.range_resolution_distance" ,
+                "title": "range_resolution_distance" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.range_resolution_distance"
                  ]
               }
             }
@@ -313,7 +298,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1020" ,
+                "classOrder": "1030" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.tx_power"
                  ]
@@ -331,7 +316,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "radar" ,
             "steward": "sbn" ,
-            "versionId": "1.16" ,
+            "versionId": "1.18" ,
             "description": "Type of radar experiment being performed. Simpler experiments can have higher signal-to-noise or simpler hardware configurations, while more complicated experiments provide more information. ‘Range’ and ‘Total Power’ are mostly historical." ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -377,127 +362,13 @@
         }
       , {
           "attribute": {
-            "identifier": "0001_NASA_PDS_1.radar.Modulation.radar.power_modulation" ,
-            "title": "power_modulation" ,
+            "identifier": "0001_NASA_PDS_1.radar.Quality.radar.matched_snr_db" ,
+            "title": "matched_snr_db" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "radar" ,
             "steward": "sbn" ,
-            "versionId": "1.16" ,
-            "description": "On\/off modulation (pulsing) of the transmitted power with time to provide range resolution, allow reception of echo in gaps, or cooling of the transmitter. Power modulation other than pulsing should be included in waveform modulation." ,
-            "isNillable": "false" ,
-            "isEnumerated": "true" ,
-            "isDeprecated": "false" ,
-            "dataType": "UTF8_Short_String_Collapsed" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.UTF8_Short_String_Collapsed" ,
-            "minimumCharacters": "1" ,
-            "maximumCharacters": "255" ,
-            "minimumValue": "Unbounded" ,
-            "maximumValue": "Unbounded" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
-            "defaultUnitId": "null"
-          , "PermissibleValueList": [
-              {"PermissibleValue": {
-                  "value": "CW" ,
-                  "valueMeaning": "Continuous Wave. Transmitter operates continuously while in operation." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Pulsed" ,
-                  "valueMeaning": "The transmitter operates for a series of short intervals, typically microseconds or milliseconds, while in operation." ,
-                  "isDeprecated": "false"
-                }
-             }
-           ]
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.radar.Modulation.radar.waveform_modulation" ,
-            "title": "waveform_modulation" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "radar" ,
-            "steward": "sbn" ,
-            "versionId": "1.16" ,
-            "description": "Additional modulation of the amplitude, phase or frequency of the transmitted signal, usually to provide range resolution. Referred to as “pulse compression” in some literature." ,
-            "isNillable": "false" ,
-            "isEnumerated": "true" ,
-            "isDeprecated": "false" ,
-            "dataType": "UTF8_Short_String_Collapsed" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.UTF8_Short_String_Collapsed" ,
-            "minimumCharacters": "1" ,
-            "maximumCharacters": "255" ,
-            "minimumValue": "Unbounded" ,
-            "maximumValue": "Unbounded" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
-            "defaultUnitId": "null"
-          , "PermissibleValueList": [
-              {"PermissibleValue": {
-                  "value": "Barker BPSK" ,
-                  "valueMeaning": "A Barker Binary Phase Shift code is applied, usually to a pulse, to improve range resolution." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Linear Chirp" ,
-                  "valueMeaning": "A repeating sawtooth linear frequency ramp is applied to the transmitted signal in order to resolve the target in range." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Non-repeating BPSK" ,
-                  "valueMeaning": "A non-repeating pseudo-random code is applied to the transmitted signal using Binary Phase-Shift Keying in order to resolve the target in range." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Other" ,
-                  "valueMeaning": "A modulation beyond a pulse and other than described above is applied to the signal." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Other BPSK" ,
-                  "valueMeaning": "A code other than those described above is applied to the transmitted signal using Binary Phase-Shift Keying." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Other Chirp" ,
-                  "valueMeaning": "A frequency ramp other than described above is applied to the transmitted signal." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Repeating LFSR BPSK" ,
-                  "valueMeaning": "A maximal-length Linear Feedback Shift Register code is applied to the transmitted signal using Binary Phase-Shift Keying, in order to resolve the target in range." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Uncoded" ,
-                  "valueMeaning": "No additional modulation beyond a pulse (if present) is applied to the signal in order to encode range information." ,
-                  "isDeprecated": "false"
-                }
-             }
-           ]
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.radar.Quality.radar.matched_snr" ,
-            "title": "matched_snr" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "radar" ,
-            "steward": "sbn" ,
-            "versionId": "1.16" ,
-            "description": "total matched-filter signal-to-noise ratio in one run" ,
+            "versionId": "1.18" ,
+            "description": "total matched-filter signal-to-noise ratio in one run, expressed in db" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -516,12 +387,37 @@
         }
       , {
           "attribute": {
-            "identifier": "0001_NASA_PDS_1.radar.Quality.radar.pixel_number" ,
-            "title": "pixel_number" ,
+            "identifier": "0001_NASA_PDS_1.radar.Quality.radar.matched_snr_ratio" ,
+            "title": "matched_snr_ratio" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "radar" ,
             "steward": "sbn" ,
-            "versionId": "1.16" ,
+            "versionId": "1.18" ,
+            "description": "total matched-filter signal-to-noise ratio in one run, expressed as an actual ratio" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.radar.Quality.radar.pixel_count" ,
+            "title": "pixel_count" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "radar" ,
+            "steward": "sbn" ,
+            "versionId": "1.18" ,
             "description": "number of pixels in an image with measurable signal" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -541,13 +437,13 @@
         }
       , {
           "attribute": {
-            "identifier": "0001_NASA_PDS_1.radar.Target_Properties.radar.range_depth" ,
-            "title": "range_depth" ,
+            "identifier": "0001_NASA_PDS_1.radar.Target_Properties.radar.range_depth_distance" ,
+            "title": "range_depth_distance" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "radar" ,
             "steward": "sbn" ,
-            "versionId": "1.16" ,
-            "description": "number of pixels in an image with measurable signal" ,
+            "versionId": "1.18" ,
+            "description": "Range depth in units of range_resolution. This is an indicator of observation usefulness for analysis" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -558,21 +454,46 @@
             "minimumValue": "0" ,
             "maximumValue": "9223372036854775807" ,
             "pattern": "null" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
+            "unitOfMeasure": "Units_of_Length" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Length" ,
+            "unitId": "AU, Angstrom, cm, km, m, micrometer, mm, nm" ,
             "defaultUnitId": "null"
           }
         }
       , {
           "attribute": {
-            "identifier": "0001_NASA_PDS_1.radar.Target_Properties.radar.roundtrip_lighttime" ,
-            "title": "roundtrip_lighttime" ,
+            "identifier": "0001_NASA_PDS_1.radar.Target_Properties.radar.range_depth_time" ,
+            "title": "range_depth_time" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "radar" ,
             "steward": "sbn" ,
-            "versionId": "1.16" ,
-            "description": "round trip lighttime to target at time of observation" ,
+            "versionId": "1.18" ,
+            "description": "Range depth in units of range_resolution. This is an indicator of observation usefulness for analysis" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Integer" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Integer" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0" ,
+            "maximumValue": "9223372036854775807" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Time" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Time" ,
+            "unitId": "day, hr, julian day, microseconds, min, ms, ns, s, yr" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.radar.Target_Properties.radar.transmitter_to_receiver_lighttime" ,
+            "title": "transmitter_to_receiver_lighttime" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "radar" ,
+            "steward": "sbn" ,
+            "versionId": "1.18" ,
+            "description": "Distance from the transmitter, to the target, and back to the reciever at the time of observation, expressed as lighttime." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -591,13 +512,38 @@
         }
       , {
           "attribute": {
-            "identifier": "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.range_resolution" ,
-            "title": "range_resolution" ,
+            "identifier": "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.range_resolution_distance" ,
+            "title": "range_resolution_distance" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "radar" ,
             "steward": "sbn" ,
-            "versionId": "1.16" ,
-            "description": "range resolution of images" ,
+            "versionId": "1.18" ,
+            "description": "Range resolution of products, expressed in units of distance. The minimum separation distance that can be resolved between two closely spaced targets by a radar." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Length" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Length" ,
+            "unitId": "AU, Angstrom, cm, km, m, micrometer, mm, nm" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.range_resolution_time" ,
+            "title": "range_resolution_time" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "radar" ,
+            "steward": "sbn" ,
+            "versionId": "1.18" ,
+            "description": "Range resolution of products, expressed in units of time. The minimum separation distance that can be resolved between two closely spaced targets by a radar." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -621,7 +567,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "radar" ,
             "steward": "sbn" ,
-            "versionId": "1.16" ,
+            "versionId": "1.18" ,
             "description": "transmitter power input to antenna" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -633,9 +579,9 @@
             "minimumValue": "0" ,
             "maximumValue": "1.7976931348623157e308" ,
             "pattern": "null" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
+            "unitOfMeasure": "Units_of_Power" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Power" ,
+            "unitId": "EW, GW, MW, PW, TW, W, YW, ZW, aW, cW, dBm, dW, daW, fW, hW, kW, mW, microW, nW, pW, yW, zW" ,
             "defaultUnitId": "null"
           }
         }
