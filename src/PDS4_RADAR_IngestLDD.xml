@@ -333,7 +333,7 @@
         </DD_Rule_Statement>
         <DD_Rule_Statement>
             <rule_type>Assert</rule_type>
-            <rule_test>//radar:range_resolution_time[@unit]==$range_depth_unit</rule_test>
+            <rule_test>//radar:range_resolution_time[@unit==$range_depth_unit]</rule_test>
             <rule_message>Unit for range_depth_time unit must match unit for range_resolution_time.</rule_message>
         </DD_Rule_Statement>
     </DD_Rule>
@@ -349,7 +349,7 @@
         </DD_Rule_Statement>
         <DD_Rule_Statement>
             <rule_type>Assert</rule_type>
-            <rule_test>//radar:range_resolution_distance[@unit]==$range_depth_unit</rule_test>
+            <rule_test>//radar:range_resolution_distance[@unit==$range_depth_unit]</rule_test>
             <rule_message>Unit for range_depth_distance unit must match unit for range_resolution_distance.</rule_message>
         </DD_Rule_Statement>
     </DD_Rule>
