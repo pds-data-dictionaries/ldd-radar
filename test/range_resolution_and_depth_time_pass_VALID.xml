@@ -85,7 +85,7 @@
             <radar:tx_power unit="W">369.0</radar:tx_power>
           </radar:Transmitter_Properties>
           <radar:Target_Properties>
-            <radar:roundtrip_lighttime unit="s">71.04</radar:roundtrip_lighttime>
+            <radar:transmitter_to_receiver_lighttime unit="s">71.04</radar:transmitter_to_receiver_lighttime>
             <radar:range_depth_time unit="s">1</radar:range_depth_time>
           </radar:Target_Properties>
         </radar:Groundbased_Radar>
