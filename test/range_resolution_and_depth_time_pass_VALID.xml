@@ -81,8 +81,8 @@
         <radar:Groundbased_Radar>
           <radar:observation_purpose>Doppler</radar:observation_purpose>
           <radar:Transmitter_Properties>
-            <radar:transmitter_to_receiver_lighttime unit="s">1</radar:transmitter_to_receiver_lighttime>
-            <radar:tx_power>369.0</radar:tx_power>
+            <radar:range_resolution_time unit="s">1</radar:range_resolution_time>
+            <radar:tx_power unit="W">369.0</radar:tx_power>
           </radar:Transmitter_Properties>
           <radar:Target_Properties>
             <radar:roundtrip_lighttime unit="s">71.04</radar:roundtrip_lighttime>
