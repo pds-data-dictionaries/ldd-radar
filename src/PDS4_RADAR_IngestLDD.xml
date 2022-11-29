@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1I00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <Ingest_LDD 
 	xmlns="http://pds.nasa.gov/pds4/pds/v1" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:radar="http://pds.nasa.gov/pds4/radar/v1" 
-	xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.xsd">
+	xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1I00.xsd">
 
 	<name>Radar</name>
     <ldd_version_id>1.0.0.0</ldd_version_id>
@@ -15,14 +15,46 @@
 	<namespace_id>radar</namespace_id>
 	<comment>PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that support radar observations.</comment>
 	<last_modification_date_time>2021-09-27T21:30:00.000Z</last_modification_date_time>
-
     <DD_Attribute>
-        <name>range_resolution</name>
+        <name>range_resolution_distance</name>
         <version_id>1.0</version_id>
-        <local_identifier>range_resolution</local_identifier>
+        <local_identifier>range_resolution_distance</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>range resolution of images</definition>
+        <definition>Range resolution of products, expressed in units of distance. The minimum separation distance that can be resolved between two closely spaced targets by a radar.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>m</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>range_resolution_time</name>
+        <version_id>1.0</version_id>
+        <local_identifier>range_resolution_time</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Range resolution of products, expressed in units of time.  The minimum separation distance that can be resolved between two closely spaced targets by a radar.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <specified_unit_id>s</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    
+    <DD_Attribute>
+        <name>transmitter_to_receiver_lighttime</name>
+        <version_id>1.0</version_id>
+        <local_identifier>transmitter_to_receiver_lighttime</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Distance from the transmitter, to the target, and back to the reciever at the time of observation, expressed as lighttime.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -33,28 +65,12 @@
     </DD_Attribute>
 
     <DD_Attribute>
-        <name>roundtrip_lighttime</name>
+        <name>matched_snr_ratio</name>
         <version_id>1.0</version_id>
-        <local_identifier>roundtrip_lighttime</local_identifier>
+        <local_identifier>matched_snr_ratio</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>round trip lighttime to target at time of observation</definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0</minimum_value>
-            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
-            <specified_unit_id>s</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>matched_snr</name>
-        <version_id>1.0</version_id>
-        <local_identifier>matched_snr</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Jesse Stone</submitter_name>
-        <definition>total matched-filter signal-to-noise ratio in one run</definition>
+        <definition>total matched-filter signal-to-noise ratio in one run, expressed as an actual ratio</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -63,16 +79,48 @@
     </DD_Attribute>
 
     <DD_Attribute>
-        <name>range_depth</name>
+        <name>matched_snr_db</name>
         <version_id>1.0</version_id>
-        <local_identifier>range_depth</local_identifier>
+        <local_identifier>matched_snr_db</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>number of pixels in an image with measurable signal</definition>
+        <definition>total matched-filter signal-to-noise ratio in one run, expressed in db</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>range_depth_distance</name>
+        <version_id>1.0</version_id>
+        <local_identifier>range_depth_distance</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Range depth in units of range_resolution. This is an indicator of observation usefulness for analysis</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
             <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>m</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>    
+
+    <DD_Attribute>
+        <name>range_depth_time</name>
+        <version_id>1.0</version_id>
+        <local_identifier>range_depth_time</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Range depth in units of range_resolution. This is an indicator of observation usefulness for analysis</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <specified_unit_id>s</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>    
 
@@ -87,20 +135,20 @@
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
             <minimum_value>0</minimum_value>
-            <!--
             <unit_of_measure_type>Units_of_Power</unit_of_measure_type>
-            <specified_unit_id>kilowatts</specified_unit_id>
-            -->
+            <specified_unit_id>W</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
     
     <DD_Attribute>
-        <name>pixel_number</name>
+        <name>pixel_count</name>
         <version_id>1.0</version_id>
         <local_identifier>pixel_number</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>number of pixels in an image with measurable signal</definition>
+<!-- If this is not nillable, what happens when the product is not an image? -->
+<!-- JS: this is not required, so does not have to be nillable -->
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -110,6 +158,8 @@
 
     <DD_Attribute>
         <name>observation_purpose</name>
+<!-- The permissible values distinguish radar "modes", not purposes of observation -->
+<!-- JS: rename element? -->
         <version_id>1.0</version_id>
         <local_identifier>observation_purpose</local_identifier>
         <nillable_flag>false</nillable_flag>
@@ -125,80 +175,20 @@
             <DD_Permissible_Value>
                 <value>Doppler</value>
                 <value_meaning>Received signal is analyzed as a function of Doppler shift with separation by range.</value_meaning>
+<!-- I don't understand the definition -->
+<!-- JS: refer to M. Nolan to clarify -->
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Range</value>
                 <value_meaning>Transmitted signal is modulated in order to resolve and/or local the target in range, but the entire received signal is analyzed without separation by Doppler shift.</value_meaning>
+<!-- Could be rewritten for clarity -->
+<!-- JS: refer to M. Nolan to clarify -->
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Total Power</value>
                 <value_meaning>Only the total echo power is measured, with no separation in range or Doppler shift.</value_meaning>
-            </DD_Permissible_Value>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>power_modulation</name>
-        <version_id>1.0</version_id>
-        <local_identifier>power_modulation</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Jesse Stone</submitter_name>
-        <definition>On/off modulation (pulsing) of the transmitted power with time to provide range resolution, allow reception of echo in gaps, or cooling of the transmitter. Power modulation other than pulsing should be included in waveform modulation.</definition>
-        <DD_Value_Domain>
-            <enumeration_flag>true</enumeration_flag>
-            <value_data_type>UTF8_Short_String_Collapsed</value_data_type>
-            <DD_Permissible_Value>
-                <value>Pulsed</value>
-                <value_meaning>The transmitter operates for a series of short intervals, typically microseconds or milliseconds, while in operation.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>CW</value>
-                <value_meaning>Continuous Wave. Transmitter operates continuously while in operation.</value_meaning>
-            </DD_Permissible_Value>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>waveform_modulation</name>
-        <version_id>1.0</version_id>
-        <local_identifier>waveform_modulation</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Jesse Stone</submitter_name>
-        <definition>Additional modulation of the amplitude, phase or frequency of the transmitted signal, usually to provide range resolution. Referred to as “pulse compression” in some literature.</definition>
-        <DD_Value_Domain>
-            <enumeration_flag>true</enumeration_flag>
-            <value_data_type>UTF8_Short_String_Collapsed</value_data_type>
-            <DD_Permissible_Value>
-                <value>Uncoded</value>
-                <value_meaning>No additional modulation beyond a pulse (if present) is applied to the signal in order to encode range information.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Barker BPSK</value>
-                <value_meaning>A Barker Binary Phase Shift code is applied, usually to a pulse, to improve range resolution.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Repeating LFSR BPSK</value>
-                <value_meaning>A maximal-length Linear Feedback Shift Register code is applied to the transmitted signal using Binary Phase-Shift Keying, in order to resolve the target in range.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Non-repeating BPSK</value>
-                <value_meaning>A non-repeating pseudo-random code is applied to the transmitted signal using Binary Phase-Shift Keying in order to resolve the target in range.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Linear Chirp</value>
-                <value_meaning>A repeating sawtooth linear frequency ramp is applied to the transmitted signal in order to resolve the target in range.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Other BPSK</value>
-                <value_meaning>A code other than those described above is applied to the transmitted signal using Binary Phase-Shift Keying.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Other Chirp</value>
-                <value_meaning>A frequency ramp other than described above is applied to the transmitted signal.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Other</value>
-                <value_meaning>A modulation beyond a pulse and other than described above is applied to the signal.</value_meaning>
+<!-- Are there such observations?  -->
+<!-- JS: refer to M. Nolan to clarify -->
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
@@ -238,12 +228,6 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>Modulation</identifier_reference>
-            <reference_type>component_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
             <identifier_reference>Quality</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
@@ -265,7 +249,13 @@
         <definition>Transmitter properties</definition>
         <element_flag>false</element_flag>
         <DD_Association>
-            <identifier_reference>range_resolution</identifier_reference>
+            <identifier_reference>range_resolution_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>range_resolution_distance</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -274,27 +264,6 @@
             <identifier_reference>tx_power</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-    <DD_Class>
-        <name>Modulation</name>
-        <version_id>1.1</version_id>
-        <local_identifier>Modulation</local_identifier>
-        <submitter_name>Jesse Stone</submitter_name>
-        <definition>Modulation</definition>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>power_modulation</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>waveform_modulation</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
@@ -307,7 +276,13 @@
         <definition>Quality</definition>
         <element_flag>false</element_flag>
         <DD_Association>
-            <identifier_reference>matched_snr</identifier_reference>
+            <identifier_reference>matched_snr_ratio</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>matched_snr_db</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -328,17 +303,55 @@
         <definition>Target Properties</definition>
         <element_flag>false</element_flag>
         <DD_Association>
-            <identifier_reference>roundtrip_lighttime</identifier_reference>
+            <identifier_reference>transmitter_to_receiver_lighttime</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>range_depth</identifier_reference>
+            <identifier_reference>range_depth_time</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-    </DD_Class>    
+        <DD_Association>
+            <identifier_reference>range_depth_distance</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <DD_Rule>
+        <local_identifier>range_resolution_and_depth_time</local_identifier>
+        <rule_context>//radar:range_depth_time</rule_context>
+        <rule_assign>name="range_depth_unit" value="@unit"</rule_assign>
+        <DD_Rule_Statement>
+            <rule_type>Assert</rule_type>
+            <rule_test>//radar:range_resolution_time</rule_test>
+            <rule_message>If range_depth_time is specified specified, range_resolution_time must also be specified.</rule_message>
+        </DD_Rule_Statement>
+        <DD_Rule_Statement>
+            <rule_type>Assert</rule_type>
+            <rule_test>//radar:range_resolution_time[@unit=$range_depth_unit]</rule_test>
+            <rule_message>Unit for range_depth_time unit must match unit for range_resolution_time.</rule_message>
+        </DD_Rule_Statement>
+    </DD_Rule>
+
+    <DD_Rule>
+        <local_identifier>range_resolution_and_depth_distance</local_identifier>
+        <rule_context>//radar:range_depth_distance</rule_context>
+        <rule_assign>name="range_depth_unit" value="@unit"</rule_assign>
+        <DD_Rule_Statement>
+            <rule_type>Assert</rule_type>
+            <rule_test>//radar:range_resolution_distance</rule_test>
+            <rule_message>If range_depth_distance is specified specified, range_resolution_distance must also be specified.</rule_message>
+        </DD_Rule_Statement>
+        <DD_Rule_Statement>
+            <rule_type>Assert</rule_type>
+            <rule_test>//radar:range_resolution_distance[@unit=$range_depth_unit]</rule_test>
+            <rule_message>Unit for range_depth_distance unit must match unit for range_resolution_distance.</rule_message>
+        </DD_Rule_Statement>
+    </DD_Rule>
 
 </Ingest_LDD>
