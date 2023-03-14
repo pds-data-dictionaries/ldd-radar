@@ -3,13 +3,13 @@ PDS Validate Tool Report
 
 Configuration:
    Version                       3.1.1
-   Date                          2023-03-14T18:52:52Z
+   Date                          2023-03-14T19:14:54Z
 
 Parameters:
-   Targets                       [file:/home/runner/work/ldd-radar/ldd-radar/test/test1_FAIL.xml, file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_fail_no_range_resolution_FAIL.xml, file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_fail_wrong_units_FAIL.xml]
+   Targets                       [file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_fail_wrong_units_FAIL.xml, file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_fail_no_range_resolution_FAIL.xml, file:/home/runner/work/ldd-radar/ldd-radar/test/test1_FAIL.xml]
    Rule Type                     pds4.label
-   User Specified Schemas        [file:/home/runner/work/ldd-radar/ldd-radar/build/development/490d5e26fe282c2b578fd9f824fc1b97375d8d75/1.19.0.0/PDS4_RADAR_1J00_1000.xsd, file:/tmp/PDS4_PDS_1J00.xsd]
-   User Specified Schematrons    [file:/home/runner/work/ldd-radar/ldd-radar/build/development/490d5e26fe282c2b578fd9f824fc1b97375d8d75/1.19.0.0/PDS4_RADAR_1J00_1000.sch, file:/tmp/PDS4_PDS_1J00.sch]
+   User Specified Schemas        [file:/home/runner/work/ldd-radar/ldd-radar/build/development/122c117f493ef889ad73640a6bfd48834bda59a0/1.19.0.0/PDS4_RADAR_1J00_1000.xsd, file:/tmp/PDS4_PDS_1J00.xsd]
+   User Specified Schematrons    [file:/home/runner/work/ldd-radar/ldd-radar/build/development/122c117f493ef889ad73640a6bfd48834bda59a0/1.19.0.0/PDS4_RADAR_1J00_1000.sch, file:/tmp/PDS4_PDS_1J00.sch]
    Severity Level                WARNING
    Recurse Directories           true
    File Filters Used             [*.xml, *.XML]
@@ -22,8 +22,8 @@ Parameters:
 
 Product Level Validation Results
 
-  FAIL: file:/home/runner/work/ldd-radar/ldd-radar/test/test1_FAIL.xml
-      ERROR  [error.label.schema]   line 43, 29: cvc-complex-type.2.4.c: The matching wildcard is strict, but no declaration can be found for element 'example:My_First_LDD'.
+  FAIL: file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_fail_wrong_units_FAIL.xml
+      ERROR  [error.label.schematron]   line 89, 46: Unit for range_depth_time unit must match unit for range_resolution_time.
       WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
         1 product validation(s) completed
 
@@ -33,8 +33,8 @@ Product Level Validation Results
       WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
         2 product validation(s) completed
 
-  FAIL: file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_fail_wrong_units_FAIL.xml
-      ERROR  [error.label.schematron]   line 89, 46: Unit for range_depth_time unit must match unit for range_resolution_time.
+  FAIL: file:/home/runner/work/ldd-radar/ldd-radar/test/test1_FAIL.xml
+      ERROR  [error.label.schema]   line 43, 29: cvc-complex-type.2.4.c: The matching wildcard is strict, but no declaration can be found for element 'example:My_First_LDD'.
       WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
         3 product validation(s) completed
 
@@ -59,5 +59,5 @@ Summary:
     3            warning.label.missing_schematron_spec
 
 End of Report
-Completed execution in 5704 ms
+Completed execution in 6696 ms
 
