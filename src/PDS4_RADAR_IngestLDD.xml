@@ -193,6 +193,44 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute>
+        <name>sample_rate</name>
+        <version_id>1.0</version_id>
+        <local_identifier>sample_rate</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>YOUR DESCRIPTION HERE</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
+            <specified_unit_id>Hz</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>    
+
+    <DD_Attribute>
+        <name>sample_type</name>
+        <version_id>1.0</version_id>
+        <local_identifier>sample_type</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>YOUR DESCRIPTION HERE</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>UTF8_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>Real</value>
+                <value_meaning>YOUR DESCRIPTION HERE</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Complex</value>
+                <value_meaning>YOUR DESCRIPTION HERE</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+
     <DD_Class>
         <name>Radar</name>
         <version_id>1.1</version_id>
@@ -210,7 +248,7 @@
 
     <DD_Class>
         <name>Groundbased_Radar</name>
-        <version_id>1.1</version_id>
+        <version_id>1.2</version_id>
         <local_identifier>Groundbased_Radar</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>This class contains attributes that describe metadata pertinent to radar observations / data from Arecibo, Goldstone, and similar installations.</definition>
@@ -235,6 +273,12 @@
         </DD_Association>
         <DD_Association>
             <identifier_reference>Target_Properties</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Sampling_Properties</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -318,6 +362,27 @@
             <identifier_reference>range_depth_distance</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <DD_Class>
+        <name>Sampling_Properties</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Sampling_Properties</local_identifier>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Sampling Properties</definition>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>sample_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>sample_rate</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
