@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:radar  Version:1.0.0.0 - Tue Nov 29 19:24:27 UTC 2022 -->
+  <!-- PDS4 Schematron for Name Space Id:radar  Version:1.0.0.0 - Tue Mar 14 18:59:53 UTC 2023 -->
   <!-- Generated from the PDS4 Information Model Version 1.19.0.0 - System Build 13.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -45,6 +45,20 @@
       <sch:assert test=". = ('Doppler', 'Range', 'Range-Doppler', 'Total Power')">
         <title>radar:Groundbased_Radar/radar:observation_purpose/radar:observation_purpose</title>
         The attribute radar:Groundbased_Radar/radar:observation_purpose must be equal to one of the following values 'Doppler', 'Range', 'Range-Doppler', 'Total Power'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="radar:Sampling_Properties/radar:sample_rate">
+      <sch:assert test="@unit = ('GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz')">
+        <title>radar:Sampling_Properties/radar:sample_rate/radar:sample_rate</title>
+        The attribute @unit must be equal to one of the following values 'GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="radar:Sampling_Properties/radar:sample_type">
+      <sch:assert test=". = ('Complex', 'Real')">
+        <title>radar:Sampling_Properties/radar:sample_type/radar:sample_type</title>
+        The attribute radar:Sampling_Properties/radar:sample_type must be equal to one of the following values 'Complex', 'Real'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

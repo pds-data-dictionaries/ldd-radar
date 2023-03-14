@@ -4,7 +4,7 @@
       "Title": "PDS4 Data Dictionary" ,
       "IM Version": "1.19.0.0" ,
       "LDD Version": "1.0.0.0" ,
-      "Date": "2022-11-29T11:24:27" ,
+      "Date": "2023-03-14T11:59:53" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "namespaces": ["pds:", "radar:"] ,
       "classDictionary": [
@@ -81,6 +81,22 @@
                 "classOrder": "1040" ,
                 "classId": [
                   "0001_NASA_PDS_1.radar.Target_Properties"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.radar.Groundbased_Radar.radar.Sampling_Properties" ,
+                "title": "Sampling_Properties" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1050" ,
+                "classId": [
+                  "0001_NASA_PDS_1.radar.Sampling_Properties"
                  ]
               }
             }
@@ -175,6 +191,53 @@
                 "classOrder": "1010" ,
                 "classId": [
                   "0001_NASA_PDS_1.radar.Groundbased_Radar"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.radar.Sampling_Properties" ,
+            "title": "Sampling_Properties" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "radar" ,
+            "steward": "sbn" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": "Sampling Properties"
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.radar.Sampling_Properties.radar.sample_type" ,
+                "title": "sample_type" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.radar.Sampling_Properties.radar.sample_type"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.radar.Sampling_Properties.radar.sample_rate" ,
+                "title": "sample_rate" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.radar.Sampling_Properties.radar.sample_rate"
                  ]
               }
             }
@@ -433,6 +496,70 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.radar.Sampling_Properties.radar.sample_rate" ,
+            "title": "sample_rate" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "radar" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": "YOUR DESCRIPTION HERE" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Frequency" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
+            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.radar.Sampling_Properties.radar.sample_type" ,
+            "title": "sample_type" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "radar" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": "YOUR DESCRIPTION HERE" ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
+            "dataType": "UTF8_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.UTF8_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "Complex" ,
+                  "valueMeaning": "YOUR DESCRIPTION HERE" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Real" ,
+                  "valueMeaning": "YOUR DESCRIPTION HERE" ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {

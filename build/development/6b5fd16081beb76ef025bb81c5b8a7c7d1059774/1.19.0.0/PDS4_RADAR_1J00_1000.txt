@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue Nov 29 19:24:27 UTC 2022
+   Time                   Tue Mar 14 18:59:53 UTC 2023
    Common Schema          [PDS4_PDS_1J00.xsd]
    Common Schematron      [PDS4_PDS_1J00.sch]
    IM Version Id:         1.19.0.0
@@ -29,9 +29,9 @@ Parameters:
    Merge with Master      false
 
 Summary:
-   Classes                5
-   Attributes             10
-   Associations           14
+   Classes                6
+   Attributes             12
+   Associations           17
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -115,6 +115,18 @@ Parsed Input - Attributes:
    value data type        UTF8_Short_String_Collapsed
    description            Type of radar experiment being performed. Simpler experiments can have higher signal-to-noise or simpler hardware configurations, while more complicated experiments provide more information. ‘Range’ and ‘Total Power’ are mostly historical.
 
+   name                   sample_rate
+   version                1.19
+   value data type        ASCII_Real
+   description            YOUR DESCRIPTION HERE
+   minimum value          0
+   unit of measure type   Units_of_Frequency
+
+   name                   sample_type
+   version                1.19
+   value data type        UTF8_Short_String_Collapsed
+   description            YOUR DESCRIPTION HERE
+
 Parsed Input - Classes:
 
    name                   Radar
@@ -154,6 +166,11 @@ Parsed Input - Classes:
       reference type        component_of
 
       local identifier      Target_Properties
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      Sampling_Properties
       minimum occurrences   0
       maximum occurrences   1
       reference type        component_of
@@ -224,6 +241,24 @@ Parsed Input - Classes:
 
       local identifier      range_depth_distance
       minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Sampling_Properties
+   description            Sampling Properties
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      sample_type
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      sample_rate
+      minimum occurrences   1
       maximum occurrences   1
       reference type        attribute_of
 

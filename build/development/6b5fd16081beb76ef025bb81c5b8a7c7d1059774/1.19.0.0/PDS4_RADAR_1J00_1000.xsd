@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:radar  Version:1.0.0.0 - Tue Nov 29 19:24:27 UTC 2022 -->
+  <!-- PDS4 XML/Schema for Name Space Id:radar  Version:1.0.0.0 - Tue Mar 14 18:59:53 UTC 2023 -->
   <!-- Generated from the PDS4 Information Model Version 1.19.0.0 - System Build 13.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
@@ -36,6 +36,7 @@ PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that sup
       <xs:element name="Transmitter_Properties" type="radar:Transmitter_Properties" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Quality" type="radar:Quality" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Target_Properties" type="radar:Target_Properties" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Sampling_Properties" type="radar:Sampling_Properties" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test="radar:observation_purpose = ('Doppler', 'Range', 'Range-Doppler', 'Total Power')"/> -->
@@ -62,6 +63,19 @@ PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that sup
     <xs:sequence>
       <xs:element name="Groundbased_Radar" type="radar:Groundbased_Radar" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Sampling_Properties">
+    <xs:annotation>
+<xs:documentation>Sampling Properties</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="sample_type" type="radar:sample_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="sample_rate" type="radar:sample_rate" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="radar:sample_type = ('Complex', 'Real')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
   <xs:complexType name="Target_Properties">
@@ -221,6 +235,34 @@ PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that sup
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+
+  <xs:simpleType name="sample_rate_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="sample_rate">
+    <xs:annotation>
+<xs:documentation>YOUR DESCRIPTION HERE</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="radar:sample_rate_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Frequency" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="sample_type">
+    <xs:annotation>
+<xs:documentation>YOUR DESCRIPTION HERE</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:UTF8_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
 
   <xs:simpleType name="transmitter_to_receiver_lighttime_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
