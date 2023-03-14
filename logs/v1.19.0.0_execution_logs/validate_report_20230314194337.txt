@@ -3,13 +3,13 @@ PDS Validate Tool Report
 
 Configuration:
    Version                       3.1.1
-   Date                          2023-03-14T19:00:13Z
+   Date                          2023-03-14T19:43:45Z
 
 Parameters:
    Targets                       [file:/home/runner/work/ldd-radar/ldd-radar/test/test1_FAIL.xml, file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_fail_no_range_resolution_FAIL.xml, file:/home/runner/work/ldd-radar/ldd-radar/test/range_resolution_and_depth_time_fail_wrong_units_FAIL.xml]
    Rule Type                     pds4.label
-   User Specified Schemas        [file:/home/runner/work/ldd-radar/ldd-radar/build/development/6b5fd16081beb76ef025bb81c5b8a7c7d1059774/1.19.0.0/PDS4_RADAR_1J00_1000.xsd, file:/tmp/PDS4_PDS_1J00.xsd]
-   User Specified Schematrons    [file:/home/runner/work/ldd-radar/ldd-radar/build/development/6b5fd16081beb76ef025bb81c5b8a7c7d1059774/1.19.0.0/PDS4_RADAR_1J00_1000.sch, file:/tmp/PDS4_PDS_1J00.sch]
+   User Specified Schemas        [file:/home/runner/work/ldd-radar/ldd-radar/build/development/d827f697bd31dd77bb2f010dac446e44111aa22d/1.19.0.0/PDS4_RADAR_1J00_1000.xsd, file:/tmp/PDS4_PDS_1J00.xsd]
+   User Specified Schematrons    [file:/home/runner/work/ldd-radar/ldd-radar/build/development/d827f697bd31dd77bb2f010dac446e44111aa22d/1.19.0.0/PDS4_RADAR_1J00_1000.sch, file:/tmp/PDS4_PDS_1J00.sch]
    Severity Level                WARNING
    Recurse Directories           true
    File Filters Used             [*.xml, *.XML]
@@ -59,5 +59,5 @@ Summary:
     3            warning.label.missing_schematron_spec
 
 End of Report
-Completed execution in 6046 ms
+Completed execution in 5178 ms
 
