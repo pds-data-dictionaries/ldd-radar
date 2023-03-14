@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue Nov 29 19:24:27 UTC 2022
+   Time                   Tue Mar 14 18:52:36 UTC 2023
    Common Schema          [PDS4_PDS_1J00.xsd]
    Common Schematron      [PDS4_PDS_1J00.sch]
    IM Version Id:         1.19.0.0
@@ -30,8 +30,8 @@ Parameters:
 
 Summary:
    Classes                5
-   Attributes             10
-   Associations           14
+   Attributes             11
+   Associations           15
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -103,6 +103,13 @@ Parsed Input - Attributes:
    description            transmitter power input to antenna
    minimum value          0
    unit of measure type   Units_of_Power
+
+   name                   pulse_repetition_frequency
+   version                1.19
+   value data type        ASCII_Real
+   description            the interpulse period
+   minimum value          0
+   unit of measure type   Units_of_Frequency
 
    name                   pixel_count
    version                1.19
@@ -178,6 +185,11 @@ Parsed Input - Classes:
 
       local identifier      tx_power
       minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      pulse_repetition_frequency
+      minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 

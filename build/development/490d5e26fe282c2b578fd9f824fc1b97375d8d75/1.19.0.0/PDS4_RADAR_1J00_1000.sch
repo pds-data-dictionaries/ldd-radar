@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:radar  Version:1.0.0.0 - Tue Nov 29 19:24:27 UTC 2022 -->
+  <!-- PDS4 Schematron for Name Space Id:radar  Version:1.0.0.0 - Tue Mar 14 18:52:36 UTC 2023 -->
   <!-- Generated from the PDS4 Information Model Version 1.19.0.0 - System Build 13.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -66,6 +66,13 @@
       <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
         <title>radar:Target_Properties/radar:transmitter_to_receiver_lighttime/radar:transmitter_to_receiver_lighttime</title>
         The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="radar:Transmitter_Properties/radar:pulse_repetition_frequency">
+      <sch:assert test="@unit = ('GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz')">
+        <title>radar:Transmitter_Properties/radar:pulse_repetition_frequency/radar:pulse_repetition_frequency</title>
+        The attribute @unit must be equal to one of the following values 'GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

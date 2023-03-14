@@ -4,7 +4,7 @@
       "Title": "PDS4 Data Dictionary" ,
       "IM Version": "1.19.0.0" ,
       "LDD Version": "1.0.0.0" ,
-      "Date": "2022-11-29T11:24:27" ,
+      "Date": "2023-03-14T11:52:36" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "namespaces": ["pds:", "radar:"] ,
       "classDictionary": [
@@ -304,6 +304,22 @@
                  ]
               }
             }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.pulse_repetition_frequency" ,
+                "title": "pulse_repetition_frequency" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1040" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.pulse_repetition_frequency"
+                 ]
+              }
+            }
            ]
           }
         }
@@ -507,6 +523,31 @@
             "unitOfMeasure": "Units_of_Time" ,
             "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Time" ,
             "unitId": "day, hr, julian day, microseconds, min, ms, ns, s, yr" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.radar.Transmitter_Properties.radar.pulse_repetition_frequency" ,
+            "title": "pulse_repetition_frequency" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "radar" ,
+            "steward": "sbn" ,
+            "versionId": "1.19" ,
+            "description": "the interpulse period" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Frequency" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
+            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
             "defaultUnitId": "null"
           }
         }
