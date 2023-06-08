@@ -139,7 +139,23 @@
             <specified_unit_id>W</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
+    <DD_Attribute>
+        <name>pulse_repetition_frequency</name>
+        <version_id>1.0</version_id>
+        <local_identifier>pulse_repetition_frequency</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>the interpulse period</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
+            <specified_unit_id>Hz</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute>
         <name>pixel_count</name>
         <version_id>1.0</version_id>
@@ -287,7 +303,7 @@
 
     <DD_Class>
         <name>Transmitter_Properties</name>
-        <version_id>1.1</version_id>
+        <version_id>1.2</version_id>
         <local_identifier>Transmitter_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>Transmitter properties</definition>
@@ -310,6 +326,13 @@
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+        <DD_Association>
+            <identifier_reference>pulse_repetition_frequency</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+
     </DD_Class>
     
     <DD_Class>
