@@ -1,0 +1,73 @@
+Error on line 87 column 54 of sampling_rate_VALID.xml:
+  SXXP0003   Error reported by XML parser: The element type "radar:transmitter_power" must
+  be terminated by the matching end-tag "</radar:transmitter_power>".: The element type
+  "radar:transmitter_power" must be terminated by the matching end-tag "</radar:transmitter_power>".
+Error on line 87 column 54 of sampling_rate_VALID.xml:
+  SXXP0003   Error reported by XML parser: The element type "radar:transmitter_power" must
+  be terminated by the matching end-tag "</radar:transmitter_power>".: The element type
+  "radar:transmitter_power" must be terminated by the matching end-tag "</radar:transmitter_power>".
+Fatal error: [node=null,object=null,url=file:/home/runner/work/ldd-radar/ldd-radar/test/sampling_rate_VALID.xml,line=87,col=54,offset=-1]: The element type "radar:transmitter_power" must be terminated by the matching end-tag "</radar:transmitter_power>".
+Error on line 87 column 54 of sampling_rate_VALID.xml:
+  SXXP0003   Error reported by XML parser: The element type "radar:transmitter_power" must
+  be terminated by the matching end-tag "</radar:transmitter_power>".: The element type
+  "radar:transmitter_power" must be terminated by the matching end-tag "</radar:transmitter_power>".
+Error on line 87 column 54 of sampling_rate_VALID.xml:
+  SXXP0003   Error reported by XML parser: The element type "radar:transmitter_power" must
+  be terminated by the matching end-tag "</radar:transmitter_power>".: The element type
+  "radar:transmitter_power" must be terminated by the matching end-tag "</radar:transmitter_power>".
+Error on line 87 column 54 of sampling_rate_VALID.xml:
+  SXXP0003   Error reported by XML parser: The element type "radar:transmitter_power" must
+  be terminated by the matching end-tag "</radar:transmitter_power>".: The element type
+  "radar:transmitter_power" must be terminated by the matching end-tag "</radar:transmitter_power>".
+Fatal error: [node=null,object=null,url=file:/home/runner/work/ldd-radar/ldd-radar/test/sampling_rate_VALID.xml,line=87,col=54,offset=-1]: The element type "radar:transmitter_power" must be terminated by the matching end-tag "</radar:transmitter_power>".
+
+PDS Validate Tool Report
+
+Configuration:
+   Version                       3.4.1
+   Date                          2024-02-05T18:50:38Z
+
+Parameters:
+   Targets                       [file:/home/runner/work/ldd-radar/ldd-radar/test/sampling_rate_VALID.xml]
+   Rule Type                     pds4.label
+   User Specified Schemas        [file:/home/runner/work/ldd-radar/ldd-radar/build/development/d111a8b745a2357de46e0984ce2f65f08fb595d7/1.19.0.0/PDS4_RADAR_1J00_1000.xsd, file:/tmp/PDS4_PDS_1J00.xsd]
+   User Specified Schematrons    [file:/home/runner/work/ldd-radar/ldd-radar/build/development/d111a8b745a2357de46e0984ce2f65f08fb595d7/1.19.0.0/PDS4_RADAR_1J00_1000.sch, file:/tmp/PDS4_PDS_1J00.sch]
+   Severity Level                WARNING
+   Recurse Directories           true
+   File Filters Used             [*.xml, *.XML]
+   Data Content Validation       off
+   Product Level Validation      on
+   Max Errors                    100000
+   Registered Contexts File      /tmp/validate-3.4.1/resources/registered_context_products.json
+
+
+
+Product Level Validation Results
+
+  FAIL: file:/home/runner/work/ldd-radar/ldd-radar/test/sampling_rate_VALID.xml
+      WARNING  [error.validation.missing_required_file]   Cannot check versioning because XML could not be parsed.
+      ERROR  [error.label.schema]   line 87, 54: The element type "radar:transmitter_power" must be terminated by the matching end-tag "</radar:transmitter_power>".
+        1 product validation(s) completed
+
+Summary:
+
+  1 error(s)
+  1 warning(s)
+
+  Product Validation Summary:
+    0          product(s) passed
+    1          product(s) failed
+    0          product(s) skipped
+
+  Referential Integrity Check Summary:
+    0          check(s) passed
+    0          check(s) failed
+    0          check(s) skipped
+
+  Message Types:
+    1            error.label.schema
+    1            error.validation.missing_required_file
+
+End of Report
+Completed execution in 3717 ms
+
