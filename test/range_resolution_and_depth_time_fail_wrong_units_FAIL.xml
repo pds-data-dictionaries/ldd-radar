@@ -82,7 +82,7 @@
           <radar:observation_purpose>Doppler</radar:observation_purpose>
           <radar:Transmission_Properties>
             <radar:range_resolution_time unit="min">1</radar:range_resolution_time>
-            <radar:transmitter_power unit="W">369.0</radar:tx_power>
+            <radar:transmitter_power unit="W">369.0</radar:transmitter_power>
           </radar:Transmission_Properties>
           <radar:Target_Properties>
             <radar:transmitter_to_receiver_lighttime unit="s">71.04</radar:transmitter_to_receiver_lighttime>
