@@ -125,9 +125,9 @@
     </DD_Attribute>    
 
     <DD_Attribute>
-        <name>tx_power</name>
-        <version_id>1.0</version_id>
-        <local_identifier>tx_power</local_identifier>
+        <name>transmitter_power</name>
+        <version_id>2.0</version_id>
+        <local_identifier>transmitter_power</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>transmitter power input to antenna</definition>
@@ -281,7 +281,7 @@
 
     <DD_Class>
         <name>Groundbased_Radar</name>
-        <version_id>1.3</version_id>
+        <version_id>2.0</version_id>
         <local_identifier>Groundbased_Radar</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>This class contains attributes that describe metadata pertinent to radar observations / data from Arecibo, Goldstone, and similar installations.</definition>
@@ -320,7 +320,7 @@
 
     <DD_Class>
         <name>Transmission_Properties</name>
-        <version_id>1.3</version_id>
+        <version_id>2.0</version_id>
         <local_identifier>Transmission_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>Transmission properties</definition>
@@ -338,7 +338,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>tx_power</identifier_reference>
+            <identifier_reference>transmitter_power</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
