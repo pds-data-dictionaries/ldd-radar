@@ -83,10 +83,10 @@
       <radar:Radar>
         <radar:Groundbased_Radar>
           <radar:observation_purpose>Doppler</radar:observation_purpose>
-          <radar:Transmitter_Properties>
-            <radar:tx_power unit="W">369.0</radar:tx_power>
+          <radar:Transmission_Properties>
+            <radar:transmitter_power unit="W">369.0</radar:tx_power>
             <radar:pulse_repetition_frequency unit="Hz">1000000.0</radar:pulse_repetition_frequency>
-          </radar:Transmitter_Properties>
+          </radar:Transmission_Properties>
           <radar:Target_Properties>
             <radar:transmitter_to_receiver_lighttime unit="s">71.04</radar:transmitter_to_receiver_lighttime>
           </radar:Target_Properties>
