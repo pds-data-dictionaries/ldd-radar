@@ -146,7 +146,7 @@
         <local_identifier>pulse_repetition_frequency</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>the interpulse period</definition>
+        <definition>For repeating waveforms including pulse patterns, the frequency at which the waveform or pulse pattern repeats.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -162,7 +162,7 @@
         <local_identifier>pulse_repetition_interval</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>the interpulse period</definition>
+        <definition>For repeating waveforms including pulse patterns, the interval from the beginning of one waveform or pulse pattern to the beginning of the next.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -232,7 +232,7 @@
         <local_identifier>sample_rate</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>YOUR DESCRIPTION HERE</definition>
+        <definition>For a data acquisition system, the interval between the beginning of one time sample and the beginning of the next time sample.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -248,17 +248,19 @@
         <local_identifier>sample_type</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>YOUR DESCRIPTION HERE</definition>
+        <definition>For a data acquisition system, whether the time samples are real values or complex value pairs obtained simultaneously. Does not imply a numeric format.
+                    Sample Type is whether the (usually voltage) samples are single real values or a complex number pair (a + ib), which depends on the hardware used to do it. In either case, the numbers themselves can be any numeric type. In raw form, they are usually few-bit integers or pairs of few-bit integers. But they may get converted to floating point in processing if filtering is done in software.
+        </definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
             <value_data_type>UTF8_Short_String_Collapsed</value_data_type>
             <DD_Permissible_Value>
                 <value>Real</value>
-                <value_meaning>YOUR DESCRIPTION HERE</value_meaning>
+                <value_meaning>Samples are single real values</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Complex</value>
-                <value_meaning>YOUR DESCRIPTION HERE</value_meaning>
+                <value_meaning>Samples are a complex number pair (a + ib)</value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
