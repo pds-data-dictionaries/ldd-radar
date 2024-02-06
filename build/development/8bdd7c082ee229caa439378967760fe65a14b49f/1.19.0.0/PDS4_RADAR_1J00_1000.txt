@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Mon Feb 05 19:02:05 UTC 2024
+   Time                   Tue Feb 06 19:44:40 UTC 2024
    Common Schema          [PDS4_PDS_1J00.xsd]
    Common Schematron      [PDS4_PDS_1J00.sch]
    IM Version Id:         1.19.0.0
@@ -107,14 +107,14 @@ Parsed Input - Attributes:
    name                   pulse_repetition_frequency
    version                1.19
    value data type        ASCII_Real
-   description            the interpulse period
+   description            For repeating waveforms including pulse patterns, the frequency at which the waveform or pulse pattern repeats.
    minimum value          0
    unit of measure type   Units_of_Frequency
 
    name                   pulse_repetition_interval
    version                1.19
    value data type        ASCII_Real
-   description            the interpulse period
+   description            For repeating waveforms including pulse patterns, the interval from the beginning of one waveform or pulse pattern to the beginning of the next.
    minimum value          0
    unit of measure type   Units_of_Time
 
@@ -132,14 +132,14 @@ Parsed Input - Attributes:
    name                   sample_rate
    version                1.19
    value data type        ASCII_Real
-   description            YOUR DESCRIPTION HERE
+   description            For a data acquisition system, the interval between the beginning of one time sample and the beginning of the next time sample.
    minimum value          0
    unit of measure type   Units_of_Frequency
 
    name                   sample_type
    version                1.19
    value data type        UTF8_Short_String_Collapsed
-   description            YOUR DESCRIPTION HERE
+   description            For a data acquisition system, whether the time samples are real values or complex value pairs obtained simultaneously. Does not imply a numeric format. Sample Type is whether the (usually voltage) samples are single real values or a complex number pair (a + ib), which depends on the hardware used to do it. In either case, the numbers themselves can be any numeric type. In raw form, they are usually few-bit integers or pairs of few-bit integers. But they may get converted to floating point in processing if filtering is done in software. 
 
 Parsed Input - Classes:
 
