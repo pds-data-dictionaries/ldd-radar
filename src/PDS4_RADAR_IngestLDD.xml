@@ -14,7 +14,7 @@
 	<steward_id>sbn</steward_id>
 	<namespace_id>radar</namespace_id>
 	<comment>PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that support radar observations.</comment>
-	<last_modification_date_time>2021-09-27T21:30:00.000Z</last_modification_date_time>
+	<last_modification_date_time>2024-02-06T19:30:00.000Z</last_modification_date_time>
     <DD_Attribute>
         <name>range_resolution_distance</name>
         <version_id>1.0</version_id>
