@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        14.1.2
+   LDDTool Version        14.3.0
    LDD Version Id:        1.0.0.0
    LDD Label Version Id:  1.25
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue Mar 14 19:14:37 UTC 2023
+   Time                   Tue Feb 06 19:44:40 UTC 2024
    Common Schema          [PDS4_PDS_1J00.xsd]
    Common Schematron      [PDS4_PDS_1J00.sch]
    IM Version Id:         1.19.0.0
@@ -29,9 +29,9 @@ Parameters:
    Merge with Master      false
 
 Summary:
-   Classes                5
-   Attributes             11
-   Associations           15
+   Classes                6
+   Attributes             14
+   Associations           19
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -97,7 +97,7 @@ Parsed Input - Attributes:
    minimum value          0
    unit of measure type   Units_of_Time
 
-   name                   tx_power
+   name                   transmitter_power
    version                1.19
    value data type        ASCII_Real
    description            transmitter power input to antenna
@@ -107,9 +107,16 @@ Parsed Input - Attributes:
    name                   pulse_repetition_frequency
    version                1.19
    value data type        ASCII_Real
-   description            the interpulse period
+   description            For repeating waveforms including pulse patterns, the frequency at which the waveform or pulse pattern repeats.
    minimum value          0
    unit of measure type   Units_of_Frequency
+
+   name                   pulse_repetition_interval
+   version                1.19
+   value data type        ASCII_Real
+   description            For repeating waveforms including pulse patterns, the interval from the beginning of one waveform or pulse pattern to the beginning of the next.
+   minimum value          0
+   unit of measure type   Units_of_Time
 
    name                   pixel_count
    version                1.19
@@ -122,6 +129,18 @@ Parsed Input - Attributes:
    value data type        UTF8_Short_String_Collapsed
    description            Type of radar experiment being performed. Simpler experiments can have higher signal-to-noise or simpler hardware configurations, while more complicated experiments provide more information. ‘Range’ and ‘Total Power’ are mostly historical.
 
+   name                   sample_rate
+   version                1.19
+   value data type        ASCII_Real
+   description            For a data acquisition system, the interval between the beginning of one time sample and the beginning of the next time sample.
+   minimum value          0
+   unit of measure type   Units_of_Frequency
+
+   name                   sample_type
+   version                1.19
+   value data type        UTF8_Short_String_Collapsed
+   description            For a data acquisition system, whether the time samples are real values or complex value pairs obtained simultaneously. Does not imply a numeric format. Sample Type is whether the (usually voltage) samples are single real values or a complex number pair (a + ib), which depends on the hardware used to do it. In either case, the numbers themselves can be any numeric type. In raw form, they are usually few-bit integers or pairs of few-bit integers. But they may get converted to floating point in processing if filtering is done in software. 
+
 Parsed Input - Classes:
 
    name                   Radar
@@ -132,7 +151,7 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      Groundbased_Radar
+      local identifier      radar:Groundbased_Radar
       minimum occurrences   0
       maximum occurrences   1
       reference type        component_of
@@ -145,50 +164,60 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      observation_purpose
+      local identifier      radar:observation_purpose
       minimum occurrences   1
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      Transmitter_Properties
+      local identifier      radar:Transmission_Properties
       minimum occurrences   0
       maximum occurrences   1
       reference type        component_of
 
-      local identifier      Quality
+      local identifier      radar:Quality
       minimum occurrences   0
       maximum occurrences   1
       reference type        component_of
 
-      local identifier      Target_Properties
+      local identifier      radar:Target_Properties
       minimum occurrences   0
       maximum occurrences   1
       reference type        component_of
 
-   name                   Transmitter_Properties
-   description            Transmitter properties
+      local identifier      radar:Sampling_Properties
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+   name                   Transmission_Properties
+   description            Transmission properties
    is abstract            false
    is choice              false
    subclass of            USER
 
    Associations
 
-      local identifier      range_resolution_time
+      local identifier      radar:range_resolution_time
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      range_resolution_distance
+      local identifier      radar:range_resolution_distance
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      tx_power
+      local identifier      radar:transmitter_power
       minimum occurrences   1
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      pulse_repetition_frequency
+      local identifier      radar:pulse_repetition_frequency
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      radar:pulse_repetition_interval
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -201,17 +230,17 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      matched_snr_ratio
+      local identifier      radar:matched_snr_ratio
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      matched_snr_db
+      local identifier      radar:matched_snr_db
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      pixel_number
+      local identifier      radar:pixel_number
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -224,18 +253,36 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      transmitter_to_receiver_lighttime
+      local identifier      radar:transmitter_to_receiver_lighttime
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      range_depth_time
+      local identifier      radar:range_depth_time
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      range_depth_distance
+      local identifier      radar:range_depth_distance
       minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Sampling_Properties
+   description            Sampling Properties
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      radar:sample_type
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      radar:sample_rate
+      minimum occurrences   1
       maximum occurrences   1
       reference type        attribute_of
 

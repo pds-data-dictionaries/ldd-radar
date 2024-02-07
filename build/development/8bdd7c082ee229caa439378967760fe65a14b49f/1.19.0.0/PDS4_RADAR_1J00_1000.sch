@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:radar  Version:1.0.0.0 - Tue Mar 14 18:59:53 UTC 2023 -->
+  <!-- PDS4 Schematron for Name Space Id:radar  Version:1.0.0.0 - Tue Feb 06 19:44:40 UTC 2024 -->
   <!-- Generated from the PDS4 Information Model Version 1.19.0.0 - System Build 13.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -83,23 +83,37 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="radar:Transmitter_Properties/radar:range_resolution_distance">
-      <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
-        <title>radar:Transmitter_Properties/radar:range_resolution_distance/radar:range_resolution_distance</title>
-        The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
+    <sch:rule context="radar:Transmission_Properties/radar:pulse_repetition_frequency">
+      <sch:assert test="@unit = ('GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz')">
+        <title>radar:Transmission_Properties/radar:pulse_repetition_frequency/radar:pulse_repetition_frequency</title>
+        The attribute @unit must be equal to one of the following values 'GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="radar:Transmitter_Properties/radar:range_resolution_time">
+    <sch:rule context="radar:Transmission_Properties/radar:pulse_repetition_interval">
       <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
-        <title>radar:Transmitter_Properties/radar:range_resolution_time/radar:range_resolution_time</title>
+        <title>radar:Transmission_Properties/radar:pulse_repetition_interval/radar:pulse_repetition_interval</title>
         The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="radar:Transmitter_Properties/radar:tx_power">
+    <sch:rule context="radar:Transmission_Properties/radar:range_resolution_distance">
+      <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
+        <title>radar:Transmission_Properties/radar:range_resolution_distance/radar:range_resolution_distance</title>
+        The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="radar:Transmission_Properties/radar:range_resolution_time">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
+        <title>radar:Transmission_Properties/radar:range_resolution_time/radar:range_resolution_time</title>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="radar:Transmission_Properties/radar:transmitter_power">
       <sch:assert test="@unit = ('EW', 'GW', 'MW', 'PW', 'TW', 'W', 'YW', 'ZW', 'aW', 'cW', 'dBm', 'dW', 'daW', 'fW', 'hW', 'kW', 'mW', 'microW', 'nW', 'pW', 'yW', 'zW')">
-        <title>radar:Transmitter_Properties/radar:tx_power/radar:tx_power</title>
+        <title>radar:Transmission_Properties/radar:transmitter_power/radar:transmitter_power</title>
         The attribute @unit must be equal to one of the following values 'EW', 'GW', 'MW', 'PW', 'TW', 'W', 'YW', 'ZW', 'aW', 'cW', 'dBm', 'dW', 'daW', 'fW', 'hW', 'kW', 'mW', 'microW', 'nW', 'pW', 'yW', 'zW'.</sch:assert>
     </sch:rule>
   </sch:pattern>

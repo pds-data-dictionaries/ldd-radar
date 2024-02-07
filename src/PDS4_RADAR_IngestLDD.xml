@@ -125,9 +125,9 @@
     </DD_Attribute>    
 
     <DD_Attribute>
-        <name>tx_power</name>
-        <version_id>1.0</version_id>
-        <local_identifier>tx_power</local_identifier>
+        <name>transmitter_power</name>
+        <version_id>2.0</version_id>
+        <local_identifier>transmitter_power</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>transmitter power input to antenna</definition>
@@ -146,7 +146,7 @@
         <local_identifier>pulse_repetition_frequency</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>the interpulse period</definition>
+        <definition>For repeating waveforms including pulse patterns, the frequency at which the waveform or pulse pattern repeats.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -155,6 +155,23 @@
             <specified_unit_id>Hz</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
+
+    <DD_Attribute>
+        <name>pulse_repetition_interval</name>
+        <version_id>1.0</version_id>
+        <local_identifier>pulse_repetition_interval</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>For repeating waveforms including pulse patterns, the interval from the beginning of one waveform or pulse pattern to the beginning of the next.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <specified_unit_id>s</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
 
     <DD_Attribute>
         <name>pixel_count</name>
@@ -215,7 +232,7 @@
         <local_identifier>sample_rate</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>YOUR DESCRIPTION HERE</definition>
+        <definition>For a data acquisition system, the interval between the beginning of one time sample and the beginning of the next time sample.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -231,17 +248,19 @@
         <local_identifier>sample_type</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>YOUR DESCRIPTION HERE</definition>
+        <definition>For a data acquisition system, whether the time samples are real values or complex value pairs obtained simultaneously. Does not imply a numeric format.
+                    Sample Type is whether the (usually voltage) samples are single real values or a complex number pair (a + ib), which depends on the hardware used to do it. In either case, the numbers themselves can be any numeric type. In raw form, they are usually few-bit integers or pairs of few-bit integers. But they may get converted to floating point in processing if filtering is done in software.
+        </definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
             <value_data_type>UTF8_Short_String_Collapsed</value_data_type>
             <DD_Permissible_Value>
                 <value>Real</value>
-                <value_meaning>YOUR DESCRIPTION HERE</value_meaning>
+                <value_meaning>Samples are single real values</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Complex</value>
-                <value_meaning>YOUR DESCRIPTION HERE</value_meaning>
+                <value_meaning>Samples are a complex number pair (a + ib)</value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
@@ -264,7 +283,7 @@
 
     <DD_Class>
         <name>Groundbased_Radar</name>
-        <version_id>1.2</version_id>
+        <version_id>2.0</version_id>
         <local_identifier>Groundbased_Radar</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>This class contains attributes that describe metadata pertinent to radar observations / data from Arecibo, Goldstone, and similar installations.</definition>
@@ -276,7 +295,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>Transmitter_Properties</identifier_reference>
+            <identifier_reference>Transmission_Properties</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -302,11 +321,11 @@
     </DD_Class>
 
     <DD_Class>
-        <name>Transmitter_Properties</name>
-        <version_id>1.2</version_id>
-        <local_identifier>Transmitter_Properties</local_identifier>
+        <name>Transmission_Properties</name>
+        <version_id>2.0</version_id>
+        <local_identifier>Transmission_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Transmitter properties</definition>
+        <definition>Transmission properties</definition>
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>range_resolution_time</identifier_reference>
@@ -321,13 +340,19 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>tx_power</identifier_reference>
+            <identifier_reference>transmitter_power</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
             <identifier_reference>pulse_repetition_frequency</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>pulse_repetition_interval</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
