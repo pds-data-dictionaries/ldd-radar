@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Wed Feb 07 16:50:25 UTC 2024
+   Time                   Thu Mar 21 21:16:41 UTC 2024
    Common Schema          [PDS4_PDS_1J00.xsd]
    Common Schematron      [PDS4_PDS_1J00.sch]
    IM Version Id:         1.19.0.0
@@ -44,8 +44,8 @@ Parsed Input - Header:
    Full Name              Jesse Stone
    Steward                sbn
    Namespace Id           radar
-   Comment                PREVIEW VERSION FOR TESTING ONLY. The Radar dictionary contains classes that support radar observations.
-   Last Modification Time 2024-02-06T19:30:00.000Z
+   Comment                The Radar dictionary contains classes that support radar observations.
+   Last Modification Time 2024-03-21T19:30:00.000Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
