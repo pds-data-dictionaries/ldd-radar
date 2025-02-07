@@ -283,10 +283,10 @@
 
     <DD_Class>
         <name>Groundbased_Radar</name>
-        <version_id>2.0</version_id>
+        <version_id>2.1</version_id>
         <local_identifier>Groundbased_Radar</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>This class contains attributes that describe metadata pertinent to radar observations / data from Arecibo, Goldstone, and similar installations.</definition>
+        <definition>Indicates that the observations were carried out with a groundbased radar facility.</definition>
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>observation_purpose</identifier_reference>
@@ -322,10 +322,10 @@
 
     <DD_Class>
         <name>Transmission_Properties</name>
-        <version_id>2.0</version_id>
+        <version_id>2.1</version_id>
         <local_identifier>Transmission_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Transmission properties</definition>
+        <definition>Specifies the transmission properties of the radar used for the observations.</definition>
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>range_resolution_time</identifier_reference>
@@ -362,10 +362,10 @@
     
     <DD_Class>
         <name>Quality</name>
-        <version_id>1.1</version_id>
+        <version_id>1.2</version_id>
         <local_identifier>Quality</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Quality</definition>
+        <definition>Specifies the quality of the radar observations.</definition>
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>matched_snr_ratio</identifier_reference>
@@ -389,10 +389,10 @@
 
     <DD_Class>
         <name>Target_Properties</name>
-        <version_id>1.1</version_id>
+        <version_id>1.2</version_id>
         <local_identifier>Target_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Target Properties</definition>
+        <definition>Gives pertinent radar properties with respect to the target</definition>
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>transmitter_to_receiver_lighttime</identifier_reference>
@@ -419,7 +419,7 @@
         <version_id>1.0</version_id>
         <local_identifier>Sampling_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Sampling Properties</definition>
+        <definition>Gives the radar sampling type and rate or interval.</definition>
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>sample_type</identifier_reference>
