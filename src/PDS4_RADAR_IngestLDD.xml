@@ -54,7 +54,7 @@
         <local_identifier>transmitter_to_receiver_lighttime</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Distance from the transmitter, to the target, and back to the reciever at the time of observation, expressed as lighttime.</definition>
+        <definition>Distance from the transmitter, to the target, and back to the receiver at the time of observation, expressed as lighttime.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
