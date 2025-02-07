@@ -368,12 +368,8 @@
         <definition>Quality</definition>
         <element_flag>false</element_flag>
         <DD_Association>
+            <identifier_reference>XSChoice#</identifier_reference>
             <identifier_reference>matched_snr_ratio</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
             <identifier_reference>matched_snr_db</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
