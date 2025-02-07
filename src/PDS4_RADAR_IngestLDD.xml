@@ -70,7 +70,7 @@
         <local_identifier>matched_snr_ratio</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>total matched-filter signal-to-noise ratio in one run, expressed as an actual ratio</definition>
+        <definition>Specifies total matched-filter signal-to-noise ratio in one run, expressed as a ratio.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -84,7 +84,7 @@
         <local_identifier>matched_snr_db</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>total matched-filter signal-to-noise ratio in one run, expressed in db</definition>
+        <definition>Specifies the total matched-filter signal-to-noise ratio in one run, expressed in db.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -271,7 +271,7 @@
         <version_id>1.1</version_id>
         <local_identifier>Radar</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>This class is the top level class that contains other radar classes, separated by sub-discipline.</definition>
+        <definition>This class specifies the parameters for radar data.</definition>
         <element_flag>true</element_flag>
         <DD_Association>
             <identifier_reference>Groundbased_Radar</identifier_reference>
@@ -286,7 +286,7 @@
         <version_id>2.1</version_id>
         <local_identifier>Groundbased_Radar</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Indicates that the observations were carried out with a groundbased radar facility.</definition>
+        <definition>This class specifies the parameters for radar observations acquired from groundbased facilities. Indicates that the observations were carried out with a groundbased radar facility.</definition>
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>observation_purpose</identifier_reference>
@@ -419,7 +419,7 @@
         <version_id>1.0</version_id>
         <local_identifier>Sampling_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Gives the radar sampling type and rate or interval.</definition>
+        <definition>Specifies the sampling propertied of the radar observations.</definition>
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>sample_type</identifier_reference>
