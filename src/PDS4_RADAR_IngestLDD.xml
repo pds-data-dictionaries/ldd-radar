@@ -240,7 +240,24 @@
             <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
             <specified_unit_id>Hz</specified_unit_id>
         </DD_Value_Domain>
-    </DD_Attribute>    
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>sample_interval</name>
+        <version_id>1.0</version_id>
+        <local_identifier>sample_interval</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Specifies the interval between the beginning of one time sample and the beginning of the next time sample for a data acquisition system</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <specified_unit_id>s</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
 
     <DD_Attribute>
         <name>sample_type</name>
@@ -416,7 +433,7 @@
 
     <DD_Class>
         <name>Sampling_Properties</name>
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>Sampling_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>Sampling Properties</definition>
@@ -428,7 +445,9 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
+            <identifier_reference>XSChoice#</identifier_reference>
             <identifier_reference>sample_rate</identifier_reference>
+            <identifier_reference>sample_interval</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
