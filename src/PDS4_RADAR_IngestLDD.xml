@@ -326,7 +326,7 @@
 
     <DD_Class>
         <name>Transmission_Properties</name>
-        <version_id>2.1</version_id>
+        <version_id>3.0</version_id>
         <local_identifier>Transmission_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>Specifies the transmission properties of the radar used for the observations.</definition>
@@ -350,18 +350,13 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
+            <identifier_reference>XSChoice#</identifier_reference>
             <identifier_reference>pulse_repetition_frequency</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
             <identifier_reference>pulse_repetition_interval</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-
     </DD_Class>
     
     <DD_Class>
