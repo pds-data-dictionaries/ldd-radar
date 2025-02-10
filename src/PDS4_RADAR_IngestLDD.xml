@@ -442,7 +442,7 @@
         <DD_Rule_Statement>
             <rule_type>Assert</rule_type>
             <rule_test>//radar:range_resolution_time</rule_test>
-            <rule_message>If range_depth_time is specified specified, range_resolution_time must also be specified.</rule_message>
+            <rule_message>If range_depth_time is specified, range_resolution_time must also be specified.</rule_message>
         </DD_Rule_Statement>
         <DD_Rule_Statement>
             <rule_type>Assert</rule_type>
@@ -458,7 +458,7 @@
         <DD_Rule_Statement>
             <rule_type>Assert</rule_type>
             <rule_test>//radar:range_resolution_distance</rule_test>
-            <rule_message>If range_depth_distance is specified specified, range_resolution_distance must also be specified.</rule_message>
+            <rule_message>If range_depth_distance is specified, range_resolution_distance must also be specified.</rule_message>
         </DD_Rule_Statement>
         <DD_Rule_Statement>
             <rule_type>Assert</rule_type>
