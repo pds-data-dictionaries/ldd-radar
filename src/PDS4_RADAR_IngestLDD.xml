@@ -95,14 +95,14 @@
 
     <DD_Attribute>
         <name>range_depth_distance</name>
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>range_depth_distance</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>Range_depth_distance is the line-of-sight distance from the nearest to the farthest illuminated range element in the product. This is an indicator of the usefulness of the observation for analysis.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Integer</value_data_type>
+            <value_data_type>ASCII_Real</value_data_type>
             <minimum_value>0</minimum_value>
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
             <specified_unit_id>m</specified_unit_id>
@@ -111,14 +111,14 @@
 
     <DD_Attribute>
         <name>range_depth_time</name>
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>range_depth_time</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>Range_depth_time is the round-trip time delay from the nearest to the farthest illuminated range element in the product. This is an indicator of the usefulness of the observation for analysis.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Integer</value_data_type>
+            <value_data_type>ASCII_Real</value_data_type>
             <minimum_value>0</minimum_value>
             <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
             <specified_unit_id>s</specified_unit_id>
