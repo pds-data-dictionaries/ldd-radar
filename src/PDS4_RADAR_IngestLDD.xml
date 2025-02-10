@@ -21,7 +21,7 @@
         <local_identifier>range_resolution_distance</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Range resolution of products, expressed in units of distance. The minimum separation distance that can be resolved between two closely spaced targets by a radar.</definition>
+        <definition>The minimum separation distance that can be resolved between two closely spaced targets by a radar in units of distance, based on the properties of the transmitted signal.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -37,7 +37,7 @@
         <local_identifier>range_resolution_time</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Range resolution of products, expressed in units of time.  The minimum separation distance that can be resolved between two closely spaced targets by a radar.</definition>
+        <definition>The minimum separation distance that can be resolved between two closely spaced targets by a radar in units of time, based on the properties of the transmitted signal.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -54,7 +54,8 @@
         <local_identifier>transmitter_to_receiver_lighttime</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Distance from the transmitter, to the target, and back to the reciever at the time of observation, expressed as lighttime.</definition>
+        <definition>Specifies the distance from the transmitter, to the target, and back to the receiver at the time
+            of observation, expressed as light time.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -98,7 +99,7 @@
         <local_identifier>range_depth_distance</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Range depth in units of range_resolution. This is an indicator of observation usefulness for analysis</definition>
+        <definition>Range_depth_distance is the line-of-sight distance from the nearest to the farthest illuminated range element in the product. This is an indicator of the usefulness of the observation for analysis.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -114,7 +115,7 @@
         <local_identifier>range_depth_time</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Range depth in units of range_resolution. This is an indicator of observation usefulness for analysis</definition>
+        <definition>Range_depth_time is the round-trip time delay from the nearest to the farthest illuminated range element in the product. This is an indicator of the usefulness of the observation for analysis.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -130,7 +131,7 @@
         <local_identifier>transmitter_power</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>transmitter power input to antenna</definition>
+        <definition>Specifies the transmitter power</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -146,7 +147,7 @@
         <local_identifier>pulse_repetition_frequency</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>For repeating waveforms including pulse patterns, the frequency at which the waveform or pulse pattern repeats.</definition>
+        <definition>For repeating waveforms including pulse patterns, it specifies the frequency at which the waveform or pulse pattern repeats.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -162,7 +163,7 @@
         <local_identifier>pulse_repetition_interval</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>For repeating waveforms including pulse patterns, the interval from the beginning of one waveform or pulse pattern to the beginning of the next.</definition>
+        <definition>For repeating waveforms including pulse patterns, it specifies the interval from the beginning of one waveform or pulse pattern to the beginning of the next.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -179,7 +180,7 @@
         <local_identifier>pixel_number</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>number of pixels in an image with measurable signal</definition>
+        <definition>Specifies the number of pixels in an image with measurable signal.</definition>
 <!-- If this is not nillable, what happens when the product is not an image? -->
 <!-- JS: this is not required, so does not have to be nillable -->
         <DD_Value_Domain>
@@ -232,7 +233,7 @@
         <local_identifier>sample_rate</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>For a data acquisition system, the interval between the beginning of one time sample and the beginning of the next time sample.</definition>
+        <definition>Specifies the frequency at which samples repeat for a data acquisition system.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -248,8 +249,11 @@
         <local_identifier>sample_type</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>For a data acquisition system, whether the time samples are real values or complex value pairs obtained simultaneously. Does not imply a numeric format.
-                    Sample Type is whether the (usually voltage) samples are single real values or a complex number pair (a + ib), which depends on the hardware used to do it. In either case, the numbers themselves can be any numeric type. In raw form, they are usually few-bit integers or pairs of few-bit integers. But they may get converted to floating point in processing if filtering is done in software.
+        <definition>Specifies whether the time samples are real values or complex value pairs obtained simultaneously
+            for a data acquisition system. It does not imply a numeric format. Sample Type is whether the (usually
+            voltage) samples are single real values or a complex number pair (a + ib), which depends on the hardware
+            used. In either case, the numbers themselves can be any numeric type. In raw form, they are usually
+            few-bit integers or pairs of few-bit integers. But they may get converted to floating point in processing.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
