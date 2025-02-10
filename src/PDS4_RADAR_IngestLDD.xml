@@ -54,7 +54,7 @@
         <local_identifier>transmitter_to_receiver_lighttime</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Distance from the transmitter, to the target, and back to the reciever at the time of observation, expressed as lighttime.</definition>
+        <definition>Distance from the transmitter, to the target, and back to the receiver at the time of observation, expressed as lighttime.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -442,7 +442,7 @@
         <DD_Rule_Statement>
             <rule_type>Assert</rule_type>
             <rule_test>//radar:range_resolution_time</rule_test>
-            <rule_message>If range_depth_time is specified specified, range_resolution_time must also be specified.</rule_message>
+            <rule_message>If range_depth_time is specified, range_resolution_time must also be specified.</rule_message>
         </DD_Rule_Statement>
         <DD_Rule_Statement>
             <rule_type>Assert</rule_type>
@@ -458,7 +458,7 @@
         <DD_Rule_Statement>
             <rule_type>Assert</rule_type>
             <rule_test>//radar:range_resolution_distance</rule_test>
-            <rule_message>If range_depth_distance is specified specified, range_resolution_distance must also be specified.</rule_message>
+            <rule_message>If range_depth_distance is specified, range_resolution_distance must also be specified.</rule_message>
         </DD_Rule_Statement>
         <DD_Rule_Statement>
             <rule_type>Assert</rule_type>
