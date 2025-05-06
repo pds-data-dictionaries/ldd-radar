@@ -1,4 +1,4 @@
-# {LDD Name} Local Data Dictionary (LDD)
+# Radar Local Data Dictionary (LDD)
 
 ## Releases
 
@@ -7,7 +7,7 @@
 
 # Documentation
 
-* **User Guide:** TBD
+* **User Guide:** https://github.com/pds-data-dictionaries/ldd-radar/blob/main/Users-Guide.pdf
 * **Other PDS Data Dictionaries Documentation:** https://pds-data-dictionaries.github.io/
 
 ## Propose Updates
