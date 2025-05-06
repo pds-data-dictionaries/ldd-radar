@@ -142,6 +142,23 @@
     </DD_Attribute>
 
     <DD_Attribute>
+        <name>transmitter_frequency</name>
+        <version_id>1.0</version_id>
+        <local_identifier>transmitter_frequency</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Specifies the transmitter frequency.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
+            <specified_unit_id>Hz</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+
+    <DD_Attribute>
         <name>pulse_repetition_frequency</name>
         <version_id>1.1</version_id>
         <local_identifier>pulse_repetition_frequency</local_identifier>
@@ -343,7 +360,7 @@
 
     <DD_Class>
         <name>Transmission_Properties</name>
-        <version_id>3.0</version_id>
+        <version_id>4.0</version_id>
         <local_identifier>Transmission_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>Specifies the transmission properties of the radar used for the observations.</definition>
@@ -356,6 +373,12 @@
         </DD_Association>
         <DD_Association>
             <identifier_reference>range_resolution_distance</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>transmitter_frequency</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
