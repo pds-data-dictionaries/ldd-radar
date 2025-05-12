@@ -89,12 +89,12 @@
           <radar:Target_Properties>
             <radar:transmitter_to_receiver_lighttime unit="s">71.04</radar:transmitter_to_receiver_lighttime>
           </radar:Target_Properties>
-          <radar:Radar_Imaging_Properties>
+          <radar:Radar_Image_Properties>
             <radar:Pixel_Scale>
               <radar:range_pixel_scale_distance unit="s">10</radar:range_pixel_scale_distance>
               <radar:doppler_pixel_scale unit="Hz">10</radar:doppler_pixel_scale>
             </radar:Pixel_Scale>
-          </radar:Radar_Imaging_Properties>
+          </radar:Radar_Image_Properties>
         </radar:Groundbased_Radar>
       </radar:Radar>
     </Discipline_Area>
