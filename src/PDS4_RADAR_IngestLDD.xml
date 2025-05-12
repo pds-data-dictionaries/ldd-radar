@@ -360,7 +360,7 @@
 
     <DD_Class>
         <name>Transmission_Properties</name>
-        <version_id>4.0</version_id>
+        <version_id>5.0</version_id>
         <local_identifier>Transmission_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>Specifies the transmission properties of the radar used for the observations.</definition>
