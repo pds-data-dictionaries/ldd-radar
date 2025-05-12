@@ -303,6 +303,54 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute>
+        <name>range_pixel_scale_time</name>
+        <version_id>1.0</version_id>
+        <local_identifier>range_pixel_scale_time</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>The time interval from the edge of one pixel to the next in the range dimension of a radar image. This is commonly the same as or a multiple of range_resolution_time.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <specified_unit_id>s</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>range_pixel_scale_distance</name>
+        <version_id>1.0</version_id>
+        <local_identifier>range_pixel_scale_distance</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>The distance from one pixel to the next in the range dimension of a radar image. This is commonly the same as or a multiple of range_resolution_distance.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>m</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>doppler_pixel_scale</name>
+        <version_id>1.0</version_id>
+        <local_identifier>doppler_pixel_scale</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>The frequency interval from the edge of one pixel to the next in the Doppler dimension of a radar image.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
+            <specified_unit_id>Hz</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
 
     <DD_Class>
         <name>Radar</name>
@@ -352,6 +400,12 @@
         </DD_Association>
         <DD_Association>
             <identifier_reference>Sampling_Properties</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Radar_Imaging</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -468,6 +522,48 @@
             <identifier_reference>sample_interval</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <DD_Class>
+        <name>Radar_Imaging</name>
+        <version>1.0</version>
+        <local_identifier>Radar_Imaging</local_identifier>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Attributes and classes for radar images</definition>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>Pixel_Scale</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+    <DD_Class>
+        <name>Pixel_Scale</name>
+        <version>1.0</version>
+        <local_identifier>Pixel_Scale</local_identifier>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Attributes that describe the dimensions of a pixel</definition>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>range_pixel_scale_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>range_pixel_scale_distance</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>doppler_pixel_scale</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
