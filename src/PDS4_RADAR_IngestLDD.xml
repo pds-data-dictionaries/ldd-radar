@@ -211,7 +211,7 @@
         <name>observation_purpose</name>
 <!-- The permissible values distinguish radar "modes", not purposes of observation -->
 <!-- JS: rename element? -->
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>observation_purpose</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
@@ -225,13 +225,13 @@
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Doppler</value>
-                <value_meaning>Received signal is analyzed as a function of Doppler shift with separation by range.</value_meaning>
+                <value_meaning>Received signal is analyzed as a function of Doppler shift.</value_meaning>
 <!-- I don't understand the definition -->
 <!-- JS: refer to M. Nolan to clarify -->
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Range</value>
-                <value_meaning>Transmitted signal is modulated in order to resolve and/or local the target in range, but the entire received signal is analyzed without separation by Doppler shift.</value_meaning>
+                <value_meaning>Transmitted signal is modulated in order to resolve and/or locate the target in range.</value_meaning>
 <!-- Could be rewritten for clarity -->
 <!-- JS: refer to M. Nolan to clarify -->
             </DD_Permissible_Value>
