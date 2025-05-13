@@ -143,9 +143,9 @@
 
     <DD_Attribute>
         <name>transmitter_frequency</name>
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>transmitter_frequency</local_identifier>
-        <nillable_flag>false</nillable_flag>
+        <nillable_flag>true</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>Specifies the transmitter frequency.</definition>
         <DD_Value_Domain>
