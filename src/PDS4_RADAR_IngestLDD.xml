@@ -226,20 +226,14 @@
             <DD_Permissible_Value>
                 <value>Doppler</value>
                 <value_meaning>Received signal is analyzed as a function of Doppler shift.</value_meaning>
-<!-- I don't understand the definition -->
-<!-- JS: refer to M. Nolan to clarify -->
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Range</value>
                 <value_meaning>Transmitted signal is modulated in order to resolve and/or locate the target in range.</value_meaning>
-<!-- Could be rewritten for clarity -->
-<!-- JS: refer to M. Nolan to clarify -->
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Total Power</value>
                 <value_meaning>Only the total echo power is measured, with no separation in range or Doppler shift.</value_meaning>
-<!-- Are there such observations?  -->
-<!-- JS: refer to M. Nolan to clarify -->
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
