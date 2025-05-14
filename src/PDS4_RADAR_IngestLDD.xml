@@ -81,7 +81,7 @@
 
     <DD_Attribute>
         <name>matched_snr_db</name>
-        <version_id>1.1</version_id>
+        <version_id>1.2</version_id>
         <local_identifier>matched_snr_db</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
@@ -89,7 +89,6 @@
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0</minimum_value>
         </DD_Value_Domain>
     </DD_Attribute>
 
