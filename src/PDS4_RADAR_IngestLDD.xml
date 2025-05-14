@@ -147,7 +147,7 @@
         <local_identifier>transmitter_frequency</local_identifier>
         <nillable_flag>true</nillable_flag>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Specifies the transmitter frequency.</definition>
+        <definition>Specifies the central transmitter frequency.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
