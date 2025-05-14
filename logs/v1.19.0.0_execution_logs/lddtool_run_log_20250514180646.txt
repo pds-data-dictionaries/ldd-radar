@@ -1,9 +1,9 @@
 
 >>  INFO LDDTOOL Version: 15.3.0
->>  INFO IM Version Id: 1.23.0.0
+>>  INFO IM Version Id: 1.19.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.0
->>  INFO Date: Wed May 14 18:03:26 UTC 2025
+>>  INFO IM Label Version Id: 1.25
+>>  INFO Date: Wed May 14 18:06:46 UTC 2025
 >>  INFO PARENT_DIR: /tmp/lddtool-15.3.0/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:radar
@@ -31,7 +31,7 @@
 
 Input:
 
-     - IM Version: 1N00
+     - IM Version: 1J00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -41,9 +41,9 @@ Input:
 
 Output:
 
-     - ./PDS4_RADAR_1N00_1300.xsd
-     - ./PDS4_RADAR_1N00_1300.sch
-     - ./PDS4_RADAR_1N00_1300.xml
-     - ./export/PDS4_PDS_1N00.JSON
+     - ./PDS4_RADAR_1J00_1300.xsd
+     - ./PDS4_RADAR_1J00_1300.sch
+     - ./PDS4_RADAR_1J00_1300.xml
+     - ./export/PDS4_PDS_1J00.JSON
 
 >>  INFO Exit(0)
