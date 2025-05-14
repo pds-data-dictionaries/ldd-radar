@@ -84,7 +84,7 @@
         <radar:Groundbased_Radar>
           <radar:observation_purpose>Doppler</radar:observation_purpose>
           <radar:Transmission_Properties>
-            <radar:transmitter_frequency xsi:nil="true" nilReason="inapplicable"/>
+            <radar:transmitter_frequency unit="MHz" xsi:nil="true" nilReason="inapplicable"/>
             <radar:transmitter_power unit="W">369.0</radar:transmitter_power>
           </radar:Transmission_Properties>
           <radar:Target_Properties>
