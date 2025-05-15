@@ -82,6 +82,7 @@
           <radar:observation_purpose>Doppler</radar:observation_purpose>
           <radar:Transmission_Properties>
             <radar:range_resolution_time unit="s">1</radar:range_resolution_time>
+            <radar:transmitter_frequency unit="MHz">300.0</radar:transmitter_frequency>
             <radar:transmitter_power unit="W">369.0</radar:transmitter_power>
           </radar:Transmission_Properties>
           <radar:Target_Properties>
