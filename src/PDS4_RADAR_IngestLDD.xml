@@ -521,7 +521,7 @@
 
     <DD_Class>
         <name>Radar_Image_Properties</name>
-        <version>1.0</version>
+        <version_id>1.0</version_id>
         <local_identifier>Radar_Image_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>Attributes and classes for radar images</definition>
@@ -536,7 +536,7 @@
 
     <DD_Class>
         <name>Pixel_Scale</name>
-        <version>1.0</version>
+        <version_id>1.0</version_id>
         <local_identifier>Pixel_Scale</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
         <definition>Attributes that describe the dimensions of a pixel</definition>
