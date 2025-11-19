@@ -501,7 +501,7 @@
         <version_id>2.0</version_id>
         <local_identifier>Sampling_Properties</local_identifier>
         <submitter_name>Jesse Stone</submitter_name>
-        <definition>Specifies the sampling propertied of the radar observations.</definition>
+        <definition>Specifies the sampling properties of the radar observations.</definition>
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>sample_type</identifier_reference>
